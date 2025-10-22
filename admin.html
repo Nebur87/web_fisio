@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Administración - Reservas</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2em; background: #f7f7f7; }
+    h1 { color: #333; }
+    table { border-collapse: collapse; width: 100%; background: #fff; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background: #eee; }
+    button { background: #d9534f; color: #fff; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; }
+    button:hover { background: #c9302c; }
+    .hidden { display: none; }
+    #login { max-width: 300px; margin: 0 auto; background: #fff; padding: 2em; border-radius: 8px; box-shadow: 0 2px 8px #ccc; }
+  </style>
+</head>
+<body>
+  <div id="login">
+    <h2>Acceso Administrador</h2>
+    <input type="password" id="adminPass" placeholder="Contraseña" />
+    <button onclick="login()">Entrar</button>
+    <p id="loginError" style="color:red;"></p>
+  </div>
+  <div id="panel" class="hidden">
+    <h1>Reservas</h1>
+    <table id="tablaReservas">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Email</th>
+          <th>Fecha</th>
+          <th>Hora</th>
+          <th>Duración</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <script>
+    const ADMIN_PASSWORD = "fisio2025"; // Cambia esta contraseña si lo deseas
+    function login() {
+      const pass = document.getElementById('adminPass').value;
+      if (pass === ADMIN_PASSWORD) {
+        document.getElementById('login').classList.add('hidden');
+        document.getElementById('panel').classList.remove('hidden');
+        cargarReservas();
+      } else {
+        document.getElementById('loginError').textContent = "Contraseña incorrecta";
+      }
+    }
+    async function cargarReservas() {
+      const res = await fetch('http://localhost:3001/todas-reservas');
+      const data = await res.json();
+      const tbody = document.querySelector('#tablaReservas tbody');
+      tbody.innerHTML = '';
+      if (data.ok && data.reservas.length) {
+        data.reservas.forEach(r => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `<td>${r.id}</td><td>${r.nombre}</td><td>${r.email}</td><td>${r.fecha}</td><td>${r.hora}</td><td>${r.duracion}</td><td><button onclick="anularReserva(${r.id})">Anular</button></td>`;
+          tbody.appendChild(tr);
+        });
+      } else {
+        tbody.innerHTML = '<tr><td colspan="6">No hay reservas</td></tr>';
+      }
+    }
+    async function anularReserva(id) {
+      if (!confirm('¿Seguro que quieres anular esta reserva?')) return;
+      const res = await fetch('http://localhost:3001/anular-reserva', {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id })
+      });
+      const data = await res.json();
+      if (data.ok) {
+        alert('Reserva anulada correctamente');
+        cargarReservas();
+      } else {
+        alert('Error: ' + data.message);
+      }
+    }
+  </script>
+</body>
+</html>
