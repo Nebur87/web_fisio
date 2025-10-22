@@ -8,13 +8,26 @@
 </head>
 <body>
   <main class="servicios-contenedor">
-    <h1>Aviso Legal</h1>
-    <h2>Datos del titular</h2>
-    <p>Clínica de Fisioterapia<br>Calle Industria Suiza 25, St-Blaise<br>Email: info@clinicafisioterapiacr.com</p>
-    <h2>Propiedad intelectual</h2>
-    <p>Todos los contenidos de este sitio web (textos, imágenes, logotipos, etc.) son propiedad de Clínica de Fisioterapia o de sus respectivos autores y están protegidos por la legislación vigente.</p>
-    <h2>Condiciones de uso</h2>
-    <p>El acceso y uso de este sitio implica la aceptación de las condiciones aquí expuestas. Clínica de Fisioterapia no se responsabiliza del uso indebido de la información ni de los daños derivados del acceso o uso de este sitio.</p>
+  <h1 class="aviso-titulo">Aviso Legal</h1>
+  <h2 class="aviso-datos-titulo">Datos del titular</h2>
+  <p class="aviso-datos-texto">Clínica de Fisioterapia<br>Calle Industria Suiza 25, St-Blaise<br>Email: info@clinicafisioterapiacr.com</p>
+  <h2 class="aviso-propiedad-titulo">Propiedad intelectual</h2>
+  <p class="aviso-propiedad-texto">Todos los contenidos de este sitio web (textos, imágenes, logotipos, etc.) son propiedad de Clínica de Fisioterapia o de sus respectivos autores y están protegidos por la legislación vigente.</p>
+  <h2 class="aviso-condiciones-titulo">Condiciones de uso</h2>
+  <p class="aviso-condiciones-texto">El acceso y uso de este sitio implica la aceptación de las condiciones aquí expuestas. Clínica de Fisioterapia no se responsabiliza del uso indebido de la información ni de los daños derivados del acceso o uso de este sitio.</p>
   </main>
+  <script>
+    window.localesJsonPath = '../locales.json';
+    window.addEventListener('DOMContentLoaded', function() {
+      var lang = (navigator.language || navigator.userLanguage || 'es').slice(0,2);
+      if(['es','fr','de','en'].includes(lang)) {
+        setLang(lang);
+      } else {
+        setLang('es');
+      }
+    });
+  </script>
+  <script src="../js/script.js"></script>
+
 </body>
 </html>
