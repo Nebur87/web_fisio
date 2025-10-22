@@ -1,0 +1,6 @@
+# Ignorar dependencias y archivos generados
+/server/node_modules/
+/server/package-lock.json
+*.log
+.DS_Store
+.env
