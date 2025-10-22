@@ -26,8 +26,8 @@ function cambiarSlide(dir) {
 
 document.addEventListener("DOMContentLoaded", () => {
   iniciarCarrusel();
-  document.getElementById("carrusel-prev").addEventListener("click", () => cambiarSlide(-1));
-  document.getElementById("carrusel-next").addEventListener("click", () => cambiarSlide(1));
+    // iniciarCarrusel();
+    // Eliminadas referencias a carrusel-prev y carrusel-next porque no existen en el HTML actual
 });
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".nav-link");
@@ -150,16 +150,3 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-// Menú responsive para navbar (debug: log para ver si el botón responde)
-document.addEventListener('DOMContentLoaded', function() {
-  var menuBtn = document.querySelector('.menu-toggle');
-  var navbar = document.querySelector('.navbar');
-  if (menuBtn && navbar) {
-    menuBtn.addEventListener('click', function() {
-      console.log('Hamburguesa pulsada');
-      navbar.classList.toggle('active');
-    });
-  } else {
-    console.log('No se encontró menu-toggle o navbar');
-  }
-});

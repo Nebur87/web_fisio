@@ -6,33 +6,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Clínica de Fisioterapia</title>
     <link rel="stylesheet" href="./css/styles2.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
 </head>
 
 <body>
-    <header>
-            <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
-                <a href="#home" class="logo-link" style="display: flex; align-items: center;">
-                    <div class="logo"><img src="./assets/img/logo.negro.jpg" alt="logo"></div>
-                </a>
-                <div style="display: flex; align-items: center; gap: 1rem;">
-                    <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
-                    <nav class="navbar" style="display: flex; align-items: center; gap: 1rem;">
-                        <a href="#home" class="nav-link">Inicio</a>
-                        <a href="#sobre-nosotros" class="nav-link">Sobre Nosotros</a>
-                        <a href="#servicios" class="nav-link">Servicios</a>
-                        <a href="#reserva" class="nav-link">Reserva</a>
-                        <a href="#contacto" class="nav-link">Contacto</a>
-                    </nav>
+    <header class="container">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="logo" href="#"><img src="./assets/img/logo.negro.jpg" alt="logo negro"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#caroussel-inner">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sobre-nosotros">Sobre Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#servicios">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#reserva">Reservar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contacto">Contacto</a>
+                        </li>
+
+                    </ul>
                 </div>
             </div>
+        </nav>
     </header>
-    <section class="carrusel">
-           <img src="assets/img/fisio-1.jpeg" class="active" alt="Masaje terapéutico" />
-           <img src="assets/img/fisio-2.jpeg" alt="Fisioterapia en casa" />
-           <img src="assets/img/fisio-3.jpg" alt="Rehabilitación deportiva" />
-    </section>
-    <section class="hero">
-           <div class="portada"><img src="assets/img/logo.blanco.jpg" alt="Logotipo portada"></div>
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="./assets/img/fisio-1.jpeg" class="d-block w-100" alt="Masaje terapéutico">
+            </div>
+            <div class="carousel-item">
+                <img src="./assets/img/fisio-2.jpeg" class="d-block w-100" alt="Fisioterapia en casa">
+            </div>
+            <div class="carousel-item">
+                <img src="./assets/img/fisio-3.jpg" class="d-block w-100" alt="Rehabilitación deportiva">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <section class="hero" id="sobre-nosotros">
+        <div class="portada"><img src="./assets/img/logo.blanco.jpg" alt="Logotipo portada"></div>
         <div class="sobre-nosotros-hero">
             <h2>A propos de nous, Ariane Gardi :</h2>
             <div class="sobre-nosotros-hero-content">
@@ -65,55 +100,77 @@
         </div>
         <div><button id="boton-reservar" onclick="scrollToSection('reserva')">Reserva tu cita</button></div>
     </section>
-        <section id="servicios" class="servicios">
+    <section id="servicios" class="servicios">
+        <div class="servicios-contenedor">
             <h2>Nos Services</h2>
             <div class="servicios-grid">
                 <div class="servicio">
-                    <div class="icono"><img src="assets/img/fisio-1.jpeg" alt="Les bienfaits du massage"></div>
+                    <div class="icono"><img src="./assets/img/fisio-1.jpeg" alt="Les bienfaits du massage"></div>
                     <div>
                         <h3>Les bienfaits du massage :</h3>
-                        <p>Le massage stimule les tissus de la peau, des muscles, des ligaments, des tendons et favorise la circulation sanguine et le système lymphatique. Le massage permet de renforcer le système immunitaire, d’augmenter le tonus réflexe et de favoriser l’évacuation de l’acide lactique déclenché par l’effort physique. Il éveille l’équilibre entre le physique et le psychique, il apporte une sensation de détente et de bien-être.</p>
+                        <p>Le massage stimule les tissus de la peau, des muscles, des ligaments, des tendons et favorise
+                            la circulation sanguine et le système lymphatique. Le massage permet de renforcer le système
+                            immunitaire, d’augmenter le tonus réflexe et de favoriser l’évacuation de l’acide lactique
+                            déclenché par l’effort physique. Il éveille l’équilibre entre le physique et le psychique,
+                            il apporte une sensation de détente et de bien-être.</p>
                     </div>
                 </div>
                 <div class="servicio">
-                    <div class="icono"><img src="assets/img/fisio-2.jpeg" alt="Massage classique"></div>
+                    <div class="icono"><img src="./assets/img/fisio-2.jpeg" alt="Massage classique"></div>
                     <div>
                         <h3>Massage classique :</h3>
-                        <p>Le massage classique – ou suédois – soulage principalement les tensions musculaires et s’applique dans la prévention des troubles de l’appareil locomoteur. La technique utilisée est celle du pétrissage, de l’effleurage, du palper-rouler et des vibrations. Ce massage vous détendra des pieds à la tête.</p>
+                        <p>Le massage classique – ou suédois – soulage principalement les tensions musculaires et
+                            s’applique dans la prévention des troubles de l’appareil locomoteur. La technique utilisée
+                            est celle du pétrissage, de l’effleurage, du palper-rouler et des vibrations. Ce massage
+                            vous détendra des pieds à la tête.</p>
                     </div>
                 </div>
                 <div class="servicio">
-                    <div class="icono"><img src="assets/img/fisio-3.jpg" alt="Massage sportif"></div>
+                    <div class="icono"><img src="./assets/img/fisio-3.jpg" alt="Massage sportif"></div>
                     <div>
                         <h3>Massage sportif :</h3>
-                        <p>Le massage sportif met l’accent sur les jambes. Il prévient la douleur et les risques de blessures. Il permet de prévenir les accidents lorsqu’il précède un entraînement, mais également de récupérer après l’effort. Le massage préparatoire à un effort dure 5 à 15 minutes, les manipulations sont rapides afin de stimuler les tissus musculaires. Le massage de récupération varie entre 45 et 60 minutes selon les besoins du.de la sportif.ve. Nous combinons les techniques du massage classique avec différents effleurages appuyés avec également la possibilité de travailler sur les points Triggers. Ce massage vous soulagera des tensions dues au sport ou à de mauvais mouvements.</p>
+                        <p>Le massage sportif met l’accent sur les jambes. Il prévient la douleur et les risques de
+                            blessures. Il permet de prévenir les accidents lorsqu’il précède un entraînement, mais
+                            également de récupérer après l’effort. Le massage préparatoire à un effort dure 5 à 15
+                            minutes, les manipulations sont rapides afin de stimuler les tissus musculaires. Le massage
+                            de récupération varie entre 45 et 60 minutes selon les besoins du.de la sportif.ve. Nous
+                            combinons les techniques du massage classique avec différents effleurages appuyés avec
+                            également la possibilité de travailler sur les points Triggers. Ce massage vous soulagera
+                            des tensions dues au sport ou à de mauvais mouvements.</p>
                     </div>
                 </div>
                 <div class="servicio">
-                    <div class="icono"><img src="assets/img/fisio-4.jpg" alt="Massage dos – nuque"></div>
+                    <div class="icono"><img src="./assets/img/fisio-4.jpg" alt="Massage dos – nuque"></div>
                     <div>
                         <h3>Massage dos – nuque :</h3>
-                        <p>Le massage du dos et de la nuque apaise les tensions musculaires et articulaires qui peuvent apparaître dans des situations de stress, lors de mauvaises postures ou suite à une activité sportive. Lors de ce massage, nous focalisons le travail sur le dos, les épaules, la nuque et la tête. Selon vos besoins, les points Triggers et le décollement de l’omoplate peuvent être proposés.</p>
+                        <p>Le massage du dos et de la nuque apaise les tensions musculaires et articulaires qui peuvent
+                            apparaître dans des situations de stress, lors de mauvaises postures ou suite à une activité
+                            sportive. Lors de ce massage, nous focalisons le travail sur le dos, les épaules, la nuque
+                            et la tête. Selon vos besoins, les points Triggers et le décollement de l’omoplate peuvent
+                            être proposés.</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
     <section id="reserva" class="reserva">
         <h2>Reserva Online</h2>
         <form>
             <label for="duracion">Duración:</label>
-            <select name="duracion" required>
+            <select id="duracion" name="duracion" required>
                 <option value="20">20 minutos</option>
                 <option value="30">30 minutos</option>
                 <option value="60">1 hora</option>
             </select>
-            <input type="text" name="nombre" placeholder="Nombre" required />
-            <input type="email" name="email" placeholder="Email" required />
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre" required autocomplete="name" />
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Email" required autocomplete="email" />
             <label for="fecha">Fecha:</label>
-            <input type="date" name="fecha" required />
+            <input type="date" id="fecha" name="fecha" required autocomplete="off" />
             <label for="hora">Hora:</label>
-            <select name="hora" required></select>
+            <select id="hora" name="hora" required autocomplete="off"></select>
             <button type="submit">Confirmar</button>
         </form>
     </section>
@@ -125,35 +182,31 @@
         <p>✉️ info@clinicafisioterapiacr.com</p>
     </section>
     <div class="mapa-contacto">
-        <a href="https://www.google.com/maps/search/?api=1&query=Calle+Industria+Suiza+25,+St-Blaise" target="_blank" rel="noopener" class="iframe-mapa-link">
-            <iframe src="https://www.google.com/maps?q=Calle+Industria+Suiza+25,+St-Blaise&output=embed" class="iframe-mapa"
-                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <a href="https://www.google.com/maps/search/?api=1&query=Calle+Industria+Suiza+25,+St-Blaise" target="_blank"
+            rel="noopener" class="iframe-mapa-link">
+            <iframe src="https://www.google.com/maps?q=Calle+Industria+Suiza+25,+St-Blaise&output=embed"
+                class="iframe-mapa" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
         </a>
     </div>
-
-    <section id="equipo" class="equipo">
-        <h2>Nuestro Equipo Profesional</h2>
-        <div class="cards">
-            <div class="card">
-                <img src="./assets/img/fisio-1.jpeg" alt="Fisioterapeuta 1" />
-                <h3>Nombre Apellido</h3>
-                <p>Especialista en terapia manual</p>
-            </div>
-            <div class="card">
-                <img src="./assets/img/fisio-2.jpeg" alt="Fisioterapeuta 2" />
-                <h3>Nombre Apellido</h3>
-                <p>10 años de experiencia</p>
-            </div>
-            <div class="card">
-                <img src="./assets/img/fisio-3.jpg" alt="Fisioterapeuta 3" />
-                <h3>Nombre Apellido</h3>
-                <p>Fisioterapia deportiva</p>
-            </div>
-        </div>
-    </section>
     <footer>
-        <p>&copy; 2024 Clínica de Fisioterapia. Todos los derechos reservados.</p>  
-    </footer>   
+        <p>&copy; 2024 Clínica de Fisioterapia. Todos los derechos reservados.</p>
+        <div class="footer-links">
+            <a href="#" style="color:#fff;text-decoration:underline; margin:0 1rem;">Política de Privacidad</a>
+            <a href="#" style="color:#fff;text-decoration:underline; margin:0 1rem;">Política de Cookies</a>
+            <a href="#" style="color:#fff;text-decoration:underline; margin:0 1rem;">Aviso Legal</a>
+        </div>
+        <div class="footer-social" style="margin-top:1rem;">
+            <a href="https://facebook.com" target="_blank" rel="noopener" style="margin:0 0.5rem; color:#fff;"><img src="./assets/img/facebook.svg" alt="Facebook" width="28" height="28" style="vertical-align:middle;"/></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" style="margin:0 0.5rem; color:#fff;"><img src="./assets/img/instagram.svg" alt="Instagram" width="28" height="28" style="vertical-align:middle;"/></a>
+            <a href="https://wa.me/123456789" target="_blank" rel="noopener" style="margin:0 0.5rem; color:#fff;"><img src="./assets/img/whatsapp.svg" alt="WhatsApp" width="28" height="28" style="vertical-align:middle;"/></a>
+        </div>
+    </footer>
     <script src="./js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
 </body>
+
 </html>
