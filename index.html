@@ -43,6 +43,12 @@
             </div>
         </nav>
     </header>
+    <div class="idiomas-bar" style="display:flex;justify-content:center;gap:1.5rem;margin:1rem 0;">
+        <a href="#" onclick="setLang('es')" title="Español"><img src="./assets/img/espana.png" alt="Español" width="32" height="32" style="border-radius:4px;"></a>
+        <a href="#" onclick="setLang('en')" title="English"><img src="./assets/img/bandera.png" alt="English" width="32" height="32" style="border-radius:4px;"></a>
+        <a href="#" onclick="setLang('fr')" title="Français"><img src="./assets/img/francia.png" alt="Français" width="32" height="32" style="border-radius:4px;"></a>
+        <a href="#" onclick="setLang('de')" title="Deutsch"><img src="./assets/img/alemania.png" alt="Deutsch" width="32" height="32" style="border-radius:4px;"></a>
+    </div>
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -108,13 +114,34 @@
                     <div class="icono"><img src="./assets/img/fisio-1.jpeg" alt="Les bienfaits du massage"></div>
                     <div>
                         <h3>Les bienfaits du massage :</h3>
-                       
-                            déclenché par l’effort physique. Il éveille l’équilibre entre le physique et le psychique,
-                            il apporte une sensation de détente et de bien-être.</p>
+                        <p>
+                            Le massage stimule les tissus de la peau, des muscles, des ligaments, des tendons et
+                            favorise la circulation sanguine et le système lymphatique. Le massage permet de renforcer
+                            le système immunitaire, d’augmenter le tonus réflexe et de favoriser l’évacuation de l’acide
+                            lactique déclenché par l’effort physique.</p>
+                        <p>
+                            Il éveille l’équilibre entre le physique et le psychique, il apporte une sensation de détente et
+                            de bien-être.
+                        </p>
                     </div>
                 </div>
                 <div class="servicio">
-                    <div class="icono"><img src="./assets/img/fisio-2.jpeg" alt="Massage classique"></div>
+                    <div class="icono"><img src="./assets/img/fisio-2.jpeg" alt="Massage sportive"></div>
+                    <div>
+                        <h3>Massage sportive:</h3>
+                        <p>Le massage sportif est conçu pour aider les athlètes à préparer leur corps
+                            pour l'effort et à récupérer après. Il se concentre sur les groupes
+                            musculaires spécifiques utilisés lors de l'activité physique.
+                            Les techniques incluent le pétrissage, l'effleurage et les étirements,
+                            visant à améliorer la flexibilité et à réduire le risque de blessures.</p>
+                        <p>de récupération varie entre 45 et 60 minutes selon les besoins du.de la sportif.ve. Nous
+                            combinons les techniques du massage classique avec différents effleurages appuyés avec
+                            également la possibilité de travailler sur les points Triggers. Ce massage vous soulagera
+                            des tensions dues au sport ou à de mauvais mouvements.</p>
+                    </div>
+                </div>
+                <div class="servicio">
+                    <div class="icono"><img src="./assets/img/fisio-3.jpg" alt="Massage classique"></div>
                     <div>
                         <h3>Massage classique :</h3>
                         <p>Le massage classique – ou suédois – soulage principalement les tensions musculaires et
@@ -166,14 +193,14 @@
 
     <section id="contacto" class="contacto">
         <h2>Contacto</h2>
-        <p>📍 Calle Industria Suiza 25</p>
-        <p>📞 +41 123 456 789</p>
-        <p>✉️ info@clinicafisioterapiacr.com</p>
+        <p>📍 Eclosion des Sens<br>c/o Espace Famaïa<br>Av. des Pâquiers 22<br>2072 St-Blaise</p>
+        <p>📞 076 575 45 59</p>
+        <p>✉️ info@eclosiondessens.com</p>
     </section>
     <div class="mapa-contacto">
-        <a href="https://www.google.com/maps/search/?api=1&query=Calle+Industria+Suiza+25,+St-Blaise" target="_blank"
-            rel="noopener" class="iframe-mapa-link">
-            <iframe src="https://www.google.com/maps?q=Calle+Industria+Suiza+25,+St-Blaise&output=embed"
+        <a href="https://www.google.com/maps/search/?api=1&query=Av.+des+P%C3%A2quiers+22,+2072+St-Blaise"
+            target="_blank" rel="noopener" class="iframe-mapa-link">
+            <iframe src="https://www.google.com/maps?q=Av.+des+P%C3%A2quiers+22,+2072+St-Blaise&output=embed"
                 class="iframe-mapa" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
         </a>
@@ -187,13 +214,16 @@
         </div>
         <div class="footer-social" style="margin-top:1rem;">
             <a href="https://instagram.com" target="_blank" rel="noopener" style="margin:0 0.5rem;">
-                <img src="./assets/img/instagram.png" alt="Instagram" width="32" height="32" style="vertical-align:middle;"/>
+                <img src="./assets/img/instagram.png" alt="Instagram" width="32" height="32"
+                    style="vertical-align:middle;" />
             </a>
             <a href="https://facebook.com" target="_blank" rel="noopener" style="margin:0 0.5rem;">
-                <img src="./assets/img/facebook.png" alt="Facebook" width="32" height="32" style="vertical-align:middle;"/>
+                <img src="./assets/img/facebook.png" alt="Facebook" width="32" height="32"
+                    style="vertical-align:middle;" />
             </a>
             <a href="https://tiktok.com" target="_blank" rel="noopener" style="margin:0 0.5rem;">
-                <img src="./assets/img/tik-tok.png" alt="TikTok" width="32" height="32" style="vertical-align:middle;"/>
+                <img src="./assets/img/tik-tok.png" alt="TikTok" width="32" height="32"
+                    style="vertical-align:middle;" />
             </a>
         </div>
     </footer>
