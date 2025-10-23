@@ -225,18 +225,25 @@ async function setLang(lang) {
     await loadLocales();
   }
   applyTranslations(lang);
-  applyLegalTranslations(lang);
+  if (typeof locales === 'object' && Object.keys(locales).length > 0) {
+    applyLegalTranslations(lang);
+  }
 }
 
 window.setLang = setLang;
+  // Detectar idioma guardado en localStorage (si existe)
+  let storedLang = localStorage.getItem('lang');
+  if (storedLang && ['es','fr','de','en'].includes(storedLang)) {
+    currentLang = storedLang;
+  }
+  setLang(currentLang);
+  // Código de reserva solo si existe el formulario
   const form = document.querySelector(".reserva form");
   if (!form) return;
   // Bloquear horarios ocupados según fecha y duración
   const fechaInput = form.fecha;
   const horaInput = form.hora;
   const duracionInput = form.duracion;
-  // Cargar idioma por defecto
-  setLang(currentLang);
 
   function generarHorasDisponibles() {
     let horas = [];

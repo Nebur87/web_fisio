@@ -70,14 +70,33 @@ app.post('/send', async (req, res) => {
         pass: 'qkgroywxoolhqwvf'
       }
     });
-    let mailOptions = {
+    // Email a la empresa
+    let mailOptionsEmpresa = {
       from: email,
       to: 'ovb.rubenfernandez@gmail.com',
       subject: 'Nueva reserva desde la web',
       text: `Nombre: ${nombre}\nEmail: ${email}\nFecha: ${fecha}\nHora: ${hora}\nDuración: ${duracion} minutos`
     };
-    await transporter.sendMail(mailOptions);
-    res.json({ ok: true, message: 'Reserva guardada y correo enviado correctamente' });
+    // Email al cliente
+    let mailOptionsCliente = {
+      from: 'ovb.rubenfernandez@gmail.com',
+      to: email,
+      subject: 'Confirmación de reserva en Clínica de Fisioterapia',
+      text: `Hola ${nombre},\n\nTu reserva ha sido registrada correctamente.\n\nFecha: ${fecha}\nHora: ${hora}\nDuración: ${duracion} minutos\n\nGracias por confiar en nosotros.\n\nClínica de Fisioterapia`
+    };
+    try {
+      let infoEmpresa = await transporter.sendMail(mailOptionsEmpresa);
+      console.log('Correo enviado a empresa:', infoEmpresa.response);
+    } catch (err) {
+      console.error('Error enviando correo a empresa:', err);
+    }
+    try {
+      let infoCliente = await transporter.sendMail(mailOptionsCliente);
+      console.log('Correo enviado al cliente:', infoCliente.response);
+    } catch (err) {
+      console.error('Error enviando correo al cliente:', err);
+    }
+    res.json({ ok: true, message: 'Reserva guardada y correos enviados (ver log para detalles)' });
   } catch (error) {
     console.log(error);
     res.status(500).json({ ok: false, message: 'Error al procesar la reserva', error });

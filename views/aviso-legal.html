@@ -1,33 +1,54 @@
-  <button onclick="window.history.back()" style="margin-top:2rem;" class="btn btn-primary">Volver atrás</button>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <title>Aviso Legal</title>
-  <link rel="stylesheet" href="./css/styles2.css">
-</head>
-<body>
-  <main class="servicios-contenedor">
-  <h1 class="aviso-titulo">Aviso Legal</h1>
-  <h2 class="aviso-datos-titulo">Datos del titular</h2>
-  <p class="aviso-datos-texto">Clínica de Fisioterapia<br>Calle Industria Suiza 25, St-Blaise<br>Email: info@clinicafisioterapiacr.com</p>
-  <h2 class="aviso-propiedad-titulo">Propiedad intelectual</h2>
-  <p class="aviso-propiedad-texto">Todos los contenidos de este sitio web (textos, imágenes, logotipos, etc.) son propiedad de Clínica de Fisioterapia o de sus respectivos autores y están protegidos por la legislación vigente.</p>
-  <h2 class="aviso-condiciones-titulo">Condiciones de uso</h2>
-  <p class="aviso-condiciones-texto">El acceso y uso de este sitio implica la aceptación de las condiciones aquí expuestas. Clínica de Fisioterapia no se responsabiliza del uso indebido de la información ni de los daños derivados del acceso o uso de este sitio.</p>
-  </main>
-  <script>
-    window.localesJsonPath = '../locales.json';
-    window.addEventListener('DOMContentLoaded', function() {
-      var lang = (navigator.language || navigator.userLanguage || 'es').slice(0,2);
-      if(['es','fr','de','en'].includes(lang)) {
-        setLang(lang);
-      } else {
-        setLang('es');
-      }
-    });
-  </script>
-  <script src="../js/script.js"></script>
 
+</head>
+
+<body>
+  <button><a href="./../index.html">Retour</a></button>
+
+  <p>
+    <h2>Mentions légales</h2>
+    Conformément aux obligations légales en vigueur en Suisse, nous vous informons des éléments suivants relatifs à
+    l’exploitation de ce site internet.
+    <h3> Éditeur du site</h3>
+    Ce site est édité par :
+    Nom de la clinique / cabinet de physiothérapie
+    Adresse complète
+    Téléphone : +41 XX XXX XX XX
+    E-mail : contact@nomdelaclinique.ch
+    Numéro IDE : CHE-XXX.XXX.XXX
+    <h3>Responsable de publication</h3>
+    Le responsable de la publication est :
+    Nom du praticien ou directeur
+    Fonction : Physiothérapeute diplômé / Responsable du cabinet
+    <h3>Hébergement</h3>
+    Le site est hébergé par :
+    Nom de l’hébergeur
+    Adresse complète
+    Téléphone : +XX XXX XXX XXX
+    Site web : www.nomdelhébergeur.ch
+    <h3>Propriété intellectuelle</h3>
+    L’ensemble des contenus présents sur ce site (textes, images, logos, vidéos, documents téléchargeables, etc.) est
+    protégé par le droit d’auteur et appartient exclusivement à Nom de la clinique, sauf mention contraire. Toute
+    reproduction, distribution ou utilisation sans autorisation écrite est strictement interdite.
+    <h3>Accessibilité et responsabilité</h3>
+    Nous nous efforçons de maintenir le site accessible et sécurisé. Toutefois, nous ne pouvons garantir l’absence
+    d’interruptions ou d’erreurs. Le cabinet décline toute responsabilité en cas de dommages directs ou indirects liés à
+    l’utilisation du site.
+    <h3>Liens externes</h3>
+    Ce site peut contenir des liens vers des sites tiers. Nous ne sommes pas responsables du contenu ou des pratiques de
+    confidentialité de ces sites.
+    <h3>Protection des données</h3>
+    La collecte et le traitement des données personnelles sont décrits dans notre Politique de confidentialité. Nous
+    respectons les dispositions de la Loi fédérale sur la protection des données (LPD) et du RGPD.
+    <h3>Droit applicable</h3>
+    Le présent site est soumis au droit suisse. En cas de litige, les tribunaux compétents sont ceux du canton de Berne,
+    sauf disposition impérative contraire.
+  </p>
 </body>
+
 </html>
