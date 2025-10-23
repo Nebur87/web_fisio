@@ -8,6 +8,13 @@
         line-height: 1.7;
     }
 }
+@media (max-width: 576px) {
+    .servicio p,
+    .sobre-nosotros-hero-content > div,
+    .sobre-nosotros-hero-content p {
+        font-size: 0.85rem !important;
+    }
+}
 /* Animación para los enlaces del navbar */
 .navbar-nav .nav-link {
     transition: color 0.18s cubic-bezier(.4,1.4,.6,1), background 0.18s cubic-bezier(.4,1.4,.6,1), transform 0.18s cubic-bezier(.4,1.4,.6,1), border-radius 0.18s cubic-bezier(.4,1.4,.6,1);
