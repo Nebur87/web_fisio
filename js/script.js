@@ -194,6 +194,11 @@ function applyTranslations(lang) {
   if (reservaHora) reservaHora.textContent = locales[lang].reserva.hora;
   const reservaBtn = document.querySelector('.reserva-confirmar');
   if (reservaBtn) reservaBtn.textContent = locales[lang].reserva.confirmar;
+  // Placeholders
+  const inputNombre = document.getElementById('nombre');
+  if (inputNombre) inputNombre.placeholder = locales[lang].reserva.nombre;
+  const inputEmail = document.getElementById('email');
+  if (inputEmail) inputEmail.placeholder = locales[lang].reserva.email;
   // Contacto
   const contactoTitle = document.querySelector('.contacto-titulo');
   if (contactoTitle) contactoTitle.textContent = locales[lang].contacto.titulo;
