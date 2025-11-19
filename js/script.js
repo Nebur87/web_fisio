@@ -1,5 +1,5 @@
 function applyLegalTranslations(lang) {
-  if (!locales[lang]) return;
+  if (typeof locales === 'undefined' || !locales || !locales[lang]) return;
   // PRIVACIDAD
   const privTitulo = document.querySelector('.politica-titulo');
   if (privTitulo) privTitulo.textContent = locales[lang].politicas.privacidad.titulo;
@@ -137,9 +137,9 @@ function applyTranslations(lang) {
   if (!locales[lang]) return;
   // Navbar
   const navItems = document.querySelectorAll('.navbar-nav .nav-link');
-  const navKeys = ['inicio', 'sobre_nosotros', 'servicios', 'galeria', 'reservar', 'contacto'];
+  const navKeys = ['inicio', 'sobre_nosotros', 'servicios', 'galeria', 'reservar', 'contacto', 'resenas'];
   navItems.forEach((item, i) => {
-    if (navKeys[i]) {
+    if (navKeys[i] && locales[lang].navbar[navKeys[i]]) {
       item.textContent = locales[lang].navbar[navKeys[i]];
     }
   });
@@ -355,12 +355,9 @@ window.setLang = setLang;
 
 // Variables globales para el sistema de reservas
 let currentStep = 1;
-const totalSteps = 4;
+const totalSteps = 3;
 let reservaData = {};
-let clientAuthenticated = false;
-let clientData = {};
-
-// Inicializar sistema de reservas mejorado
+// Inicializar sistema de reservas directo (sin login)
 document.addEventListener('DOMContentLoaded', function() {
   if (document.getElementById('reservaForm')) {
     initializeReservationSystem();
@@ -368,19 +365,15 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function initializeReservationSystem() {
-  // Verificar si el usuario ya está autenticado
-  checkClientAuthentication();
-  
-  // Configurar login de cliente
-  setupClientLogin();
-  
   const form = document.getElementById('reservaForm');
   if (form) {
     const fechaInput = document.getElementById('fecha');
     
     // Establecer fecha mínima como hoy
     const today = new Date().toISOString().split('T')[0];
-    fechaInput.setAttribute('min', today);
+    if (fechaInput) {
+      fechaInput.setAttribute('min', today);
+    }
     
     // Event listeners
     setupEventListeners();
@@ -393,23 +386,7 @@ function initializeReservationSystem() {
   }
 }
 
-function checkClientAuthentication() {
-  const savedClientData = localStorage.getItem('clientData');
-  
-  if (savedClientData) {
-    try {
-      clientData = JSON.parse(savedClientData);
-      clientAuthenticated = true;
-      showReservationForm();
-      displayUserInfo();
-    } catch (error) {
-      localStorage.removeItem('clientData');
-      showLoginForm();
-    }
-  } else {
-    showLoginForm();
-  }
-}
+// Función eliminada - Ya no se requiere autenticación
 
 function setupClientLogin() {
   const loginForm = document.getElementById('clientLoginForm');
@@ -467,17 +444,7 @@ function extractNameFromEmail(email) {
   return username.charAt(0).toUpperCase() + username.slice(1);
 }
 
-function showLoginForm() {
-  document.getElementById('loginSection').style.display = 'block';
-  document.getElementById('reservaFormSection').style.display = 'none';
-  document.getElementById('userInfo').style.display = 'none';
-}
-
-function showReservationForm() {
-  document.getElementById('loginSection').style.display = 'none';
-  document.getElementById('reservaFormSection').style.display = 'block';
-  document.getElementById('userInfo').style.display = 'block';
-}
+// Funciones de login eliminadas - Ya no se requiere autenticación
 
 function displayUserInfo() {
   if (clientData.name) {
@@ -585,12 +552,25 @@ function setupEventListeners() {
     validateField(this);
     updateStepProgress();
   });
-  
-  // Términos y condiciones
-  document.getElementById('aceptarTerminos').addEventListener('change', function() {
-    reservaData.aceptarTerminos = this.checked;
+
+  document.getElementById('telefono').addEventListener('input', function() {
+    reservaData.telefono = this.value;
+    validateField(this);
     updateStepProgress();
   });
+
+  document.getElementById('servicio').addEventListener('change', function() {
+    reservaData.servicio = this.value;
+    updateStepProgress();
+  });
+
+  // Comentarios
+  const comentariosInput = document.getElementById('comentarios');
+  if (comentariosInput) {
+    comentariosInput.addEventListener('input', function() {
+      reservaData.notas = this.value;
+    });
+  }
   
   // Envío del formulario
   form.addEventListener('submit', handleFormSubmit);
@@ -652,28 +632,40 @@ async function updateAvailableHours() {
   const horaSelect = document.getElementById('hora');
   const loadingIndicator = document.getElementById('horariosLoading');
   
-  if (!fechaInput.value || !reservaData.duracion) {
-    horaSelect.innerHTML = '<option value="">Selecciona una fecha y duración primero</option>';
+  if (!fechaInput.value) {
+    horaSelect.innerHTML = '<option value="">Primero selecciona una fecha</option>';
     return;
   }
+
+  // Obtener la duración del paso 1
+  const duracionSeleccionada = document.querySelector('input[name="duracion"]:checked');
+  if (!duracionSeleccionada) {
+    horaSelect.innerHTML = '<option value="">Error: no se encontró la duración seleccionada</option>';
+    return;
+  }
+
+  const duracion = parseInt(duracionSeleccionada.value);
   
   // Mostrar indicador de carga
-  loadingIndicator.style.display = 'block';
+  if (loadingIndicator) {
+    loadingIndicator.style.display = 'block';
+  }
   horaSelect.disabled = true;
+  horaSelect.innerHTML = '<option value="">Cargando horarios...</option>';
   
   try {
     const response = await fetch(`http://localhost:3001/horarios-ocupados?fecha=${fechaInput.value}`);
     const data = await response.json();
     
     if (data.ok) {
-      const horariosOcupados = data.horarios;
-      const horariosDisponibles = generateAvailableHours(horariosOcupados, parseInt(reservaData.duracion));
+      const horariosOcupados = data.horarios || [];
+      const horariosDisponibles = generateAvailableHours(horariosOcupados, duracion);
       
       // Actualizar opciones
-      horaSelect.innerHTML = '<option value="">Selecciona una hora</option>';
+      horaSelect.innerHTML = '<option value="" data-translate="selecciona_hora">Selecciona una hora</option>';
       
       if (horariosDisponibles.length === 0) {
-        horaSelect.innerHTML += '<option value="" disabled>No hay horarios disponibles</option>';
+        horaSelect.innerHTML += '<option value="" disabled>No hay horarios disponibles para esta fecha</option>';
       } else {
         horariosDisponibles.forEach(hora => {
           horaSelect.innerHTML += `<option value="${hora}">${hora}</option>`;
@@ -682,9 +674,16 @@ async function updateAvailableHours() {
     }
   } catch (error) {
     console.error('Error al obtener horarios:', error);
-    horaSelect.innerHTML = '<option value="" disabled>Error al cargar horarios</option>';
+    // Generar horarios básicos como fallback
+    const horariosBasicos = ['09:00', '10:00', '11:00', '14:00', '15:00', '16:00', '17:00'];
+    horaSelect.innerHTML = '<option value="" data-translate="selecciona_hora">Selecciona una hora</option>';
+    horariosBasicos.forEach(hora => {
+      horaSelect.innerHTML += `<option value="${hora}">${hora}</option>`;
+    });
   } finally {
-    loadingIndicator.style.display = 'none';
+    if (loadingIndicator) {
+      loadingIndicator.style.display = 'none';
+    }
     horaSelect.disabled = false;
   }
 }
@@ -727,12 +726,6 @@ function toMinutes(horaStr) {
 }
 
 function nextStep(step) {
-  // Verificar autenticación antes de continuar
-  if (!clientAuthenticated) {
-    alert('Debes identificarte primero para hacer una reserva');
-    return;
-  }
-  
   if (!validateCurrentStep()) {
     return;
   }
@@ -741,9 +734,14 @@ function nextStep(step) {
     showStep(step);
     updateProgressIndicator(step);
     
-    // Si es el paso de confirmación, actualizar resumen
-    if (step === 4) {
-      updateSummary();
+    // Si es el paso 3 (fecha y hora), configurar fecha mínima
+    if (step === 3) {
+      const fechaInput = document.getElementById('fecha');
+      const today = new Date();
+      fechaInput.min = today.toISOString().split('T')[0];
+      
+      // Configurar evento para cargar horarios cuando se seleccione fecha
+      fechaInput.addEventListener('change', updateAvailableHours);
     }
   }
 }
@@ -781,34 +779,53 @@ function updateProgressIndicator(step) {
 function validateCurrentStep() {
   switch(currentStep) {
     case 1:
-      if (!reservaData.duracion) {
+      // Validar duración seleccionada
+      const duracionSeleccionada = document.querySelector('input[name="duracion"]:checked');
+      if (!duracionSeleccionada) {
         alert('Por favor, selecciona la duración de la cita.');
         return false;
       }
+      reservaData.duracion = duracionSeleccionada.value;
       break;
       
     case 2:
-      if (!reservaData.fecha || !reservaData.hora) {
-        alert('Por favor, selecciona fecha y hora.');
-        return false;
-      }
-      break;
+      // Validar datos personales
+      const nombre = document.getElementById('nombre');
+      const email = document.getElementById('email');
+      const telefono = document.getElementById('telefono');
       
-    case 3:
-      const nombreValido = validateField(document.getElementById('nombre'));
-      const emailValido = validateField(document.getElementById('email'));
+      const nombreValido = validateField(nombre);
+      const emailValido = validateField(email);
+      const telefonoValido = validateField(telefono);
       
-      if (!nombreValido || !emailValido) {
+      if (!nombreValido || !emailValido || !telefonoValido) {
         alert('Por favor, completa correctamente todos los campos obligatorios.');
         return false;
       }
+      
+      reservaData.nombre = nombre.value;
+      reservaData.email = email.value;
+      reservaData.telefono = telefono.value;
       break;
       
-    case 4:
-      if (!reservaData.aceptarTerminos) {
-        alert('Debes aceptar los términos y condiciones.');
+    case 3:
+      // Validar fecha y hora
+      const fecha = document.getElementById('fecha');
+      const hora = document.getElementById('hora');
+      
+      if (!fecha.value) {
+        alert('Por favor, selecciona una fecha.');
         return false;
       }
+      
+      if (!hora.value) {
+        alert('Por favor, selecciona una hora.');
+        return false;
+      }
+      
+      reservaData.fecha = fecha.value;
+      reservaData.hora = hora.value;
+      reservaData.comentarios = document.getElementById('comentarios').value;
       break;
   }
   
@@ -817,8 +834,15 @@ function validateCurrentStep() {
 
 function updateStepProgress() {
   // Actualizar los datos del resumen en tiempo real
-  reservaData.telefono = document.getElementById('telefono').value;
-  reservaData.notas = document.getElementById('notas').value;
+  const telefonoEl = document.getElementById('telefono');
+  const notasEl = document.getElementById('notas') || document.getElementById('comentarios');
+  
+  if (telefonoEl) {
+    reservaData.telefono = telefonoEl.value;
+  }
+  if (notasEl) {
+    reservaData.notas = notasEl.value;
+  }
 }
 
 function updateSummary() {
@@ -844,55 +868,71 @@ function formatearFecha(fecha) {
 async function handleFormSubmit(e) {
   e.preventDefault();
   
-  if (!clientAuthenticated) {
-    alert('Debes identificarte primero para hacer una reserva');
-    return;
-  }
-  
   if (!validateCurrentStep()) {
     return;
   }
   
   const submitButton = document.getElementById('btnConfirmar');
   const originalText = submitButton.innerHTML;
+  const mensajeExito = document.getElementById('mensajeExito');
+  const mensajeError = document.getElementById('mensajeError');
+  const formCard = document.querySelector('.reserva-card');
+  
+  // Ocultar mensajes previos
+  mensajeExito.classList.add('d-none');
+  mensajeError.classList.add('d-none');
   
   // Mostrar estado de carga
   submitButton.disabled = true;
   submitButton.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Enviando...';
   
   try {
+    // Recoger datos del formulario actualizado
+    const duracionSeleccionada = document.querySelector('input[name="duracion"]:checked');
+    const nombre = document.getElementById('nombre').value;
+    const email = document.getElementById('email').value;
+    const telefono = document.getElementById('telefono').value;
+    const fecha = document.getElementById('fecha').value;
+    const hora = document.getElementById('hora').value;
+    const comentarios = document.getElementById('comentarios').value;
+    
     const response = await fetch('http://localhost:3001/send', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json; charset=utf-8',
+        'Accept': 'application/json; charset=utf-8'
       },
       body: JSON.stringify({
-        nombre: reservaData.nombre || clientData.name,
-        email: reservaData.email || clientData.email,
-        fecha: reservaData.fecha,
-        hora: reservaData.hora,
-        duracion: reservaData.duracion,
-        telefono: reservaData.telefono || clientData.phone,
-        notas: reservaData.notas || ''
+        nombre: nombre,
+        email: email,
+        telefono: telefono,
+        fecha: fecha,
+        hora: hora,
+        duracion: duracionSeleccionada ? duracionSeleccionada.value : '',
+        notas: comentarios
       })
     });
     
     const result = await response.json();
     
-    if (result.ok) {
-      // Mostrar modal de éxito
-      const successModal = new bootstrap.Modal(document.getElementById('successModal'));
-      successModal.show();
+    if (response.ok && result.ok) {
+      // Ocultar formulario y mostrar mensaje de éxito
+      formCard.style.display = 'none';
+      mensajeExito.classList.remove('d-none');
       
-      // Resetear formulario después de cerrar el modal
-      document.getElementById('successModal').addEventListener('hidden.bs.modal', function() {
+      // Resetear formulario después de 5 segundos
+      setTimeout(() => {
         resetForm();
-      });
+        formCard.style.display = 'block';
+        mensajeExito.classList.add('d-none');
+      }, 5000);
     } else {
       throw new Error(result.message || 'Error al procesar la reserva');
     }
   } catch (error) {
-    alert('Error al enviar la reserva: ' + error.message);
+    console.error('Error al enviar la reserva:', error);
+    mensajeError.classList.remove('d-none');
+    document.getElementById('mensajeErrorTexto').textContent = error.message;
   } finally {
     submitButton.disabled = false;
     submitButton.innerHTML = originalText;
@@ -1161,5 +1201,211 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     ratingBars.forEach(bar => observer.observe(bar));
+});
+
+// ===========================
+// CARGA DE RESEÑAS DESDE API
+// ===========================
+
+async function loadReviewsFromAPI() {
+    try {
+        const response = await fetch('http://localhost:3001/resenas?limit=10', {
+            headers: {
+                'Accept': 'application/json; charset=utf-8'
+            }
+        });
+        if (!response.ok) throw new Error('Error al cargar reseñas');
+        
+        const data = await response.json();
+        if (data.ok && data.resenas) {
+            displayReviewsInCarousel(data.resenas);
+        } else {
+            throw new Error('Formato de respuesta incorrecto');
+        }
+        updateReviewsStats();
+    } catch (error) {
+        console.error('Error cargando reseñas:', error);
+        // Mostrar reseñas de ejemplo si falla la API
+        showFallbackReviews();
+    }
+}
+
+function displayReviewsInCarousel(reviews) {
+    const reviewsContainer = document.querySelector('.reviews-grid') || document.querySelector('#resenasContainer');
+    if (!reviewsContainer) return;
+    
+    // Limpiar contenido existente
+    reviewsContainer.innerHTML = '';
+    
+    reviews.forEach(review => {
+        const reviewCard = createReviewCard(review);
+        reviewsContainer.appendChild(reviewCard);
+    });
+}
+
+function createReviewCard(review) {
+    const card = document.createElement('div');
+    card.className = 'review-card';
+    
+    // Función para limpiar y formatear texto de forma segura
+    function sanitizeAndFormatText(text) {
+        if (!text) return '';
+        // Crear un elemento de texto para evitar problemas con caracteres especiales
+        const textNode = document.createTextNode(text.trim());
+        const div = document.createElement('div');
+        div.appendChild(textNode);
+        return div.innerHTML;
+    }
+    
+    // Crear estrellas como iconos
+    const starsHtml = Array(5).fill(0).map((_, i) => 
+        `<i class="fas fa-star ${i < review.rating ? '' : 'text-muted'}"></i>`
+    ).join('');
+    
+    // Obtener iniciales del nombre (máximo 2 caracteres)
+    const nombre = review.nombre || 'Usuario';
+    const initials = nombre.split(' ')
+        .map(n => n.charAt(0).toUpperCase())
+        .join('')
+        .substring(0, 2);
+    
+    // Formatear fecha de forma más elegante
+    const fecha = new Date(review.fecha_creacion);
+    const fechaFormateada = fecha.toLocaleDateString('es-ES', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+    
+    // Crear estructura usando createElement para mayor seguridad
+    const reviewHeader = document.createElement('div');
+    reviewHeader.className = 'review-header';
+    
+    const reviewerInfo = document.createElement('div');
+    reviewerInfo.className = 'reviewer-info';
+    
+    const reviewerAvatar = document.createElement('div');
+    reviewerAvatar.className = 'reviewer-avatar';
+    reviewerAvatar.textContent = initials;
+    
+    const reviewerDetails = document.createElement('div');
+    reviewerDetails.className = 'reviewer-details';
+    
+    const reviewerName = document.createElement('h4');
+    reviewerName.textContent = nombre;
+    
+    const reviewDate = document.createElement('div');
+    reviewDate.className = 'review-date';
+    reviewDate.textContent = fechaFormateada;
+    
+    const reviewVerified = document.createElement('div');
+    reviewVerified.className = 'review-verified';
+    reviewVerified.innerHTML = '<i class="fas fa-check-circle"></i> Verificada';
+    
+    const reviewRating = document.createElement('div');
+    reviewRating.className = 'review-rating';
+    reviewRating.innerHTML = starsHtml;
+    
+    const reviewText = document.createElement('div');
+    reviewText.className = 'review-text';
+    reviewText.textContent = review.comentario || 'Sin comentarios';
+    
+    // Ensamblar la estructura
+    reviewerDetails.appendChild(reviewerName);
+    reviewerDetails.appendChild(reviewDate);
+    reviewerDetails.appendChild(reviewVerified);
+    
+    reviewerInfo.appendChild(reviewerAvatar);
+    reviewerInfo.appendChild(reviewerDetails);
+    
+    reviewHeader.appendChild(reviewerInfo);
+    reviewHeader.appendChild(reviewRating);
+    
+    card.appendChild(reviewHeader);
+    card.appendChild(reviewText);
+    
+    return card;
+}
+
+async function updateReviewsStats() {
+    try {
+        const response = await fetch('http://localhost:3001/resenas', {
+            headers: {
+                'Accept': 'application/json; charset=utf-8'
+            }
+        });
+        if (!response.ok) throw new Error('Error al cargar estadísticas');
+        
+        const data = await response.json();
+        const stats = data.ok ? data.estadisticas : null;
+        
+        if (!stats) throw new Error('No se pudieron obtener las estadísticas');
+        
+        // Actualizar número total de reseñas
+        const reviewsCountElement = document.querySelector('.reviews-count');
+        if (reviewsCountElement) {
+            const currentLang = getCurrentLanguage();
+            if (currentLang === 'es') {
+                reviewsCountElement.textContent = `${stats.total} reseñas`;
+            } else if (currentLang === 'fr') {
+                reviewsCountElement.textContent = `${stats.total} avis`;
+            } else if (currentLang === 'de') {
+                reviewsCountElement.textContent = `${stats.total} Bewertungen`;
+            } else if (currentLang === 'en') {
+                reviewsCountElement.textContent = `${stats.total} reviews`;
+            } else if (currentLang === 'it') {
+                reviewsCountElement.textContent = `${stats.total} recensioni`;
+            }
+        }
+        
+        // Actualizar promedio de estrellas
+        const ratingElement = document.querySelector('.average-rating');
+        if (ratingElement) {
+            ratingElement.textContent = stats.average.toFixed(1);
+        }
+        
+    } catch (error) {
+        console.error('Error cargando estadísticas:', error);
+    }
+}
+
+function getCurrentLanguage() {
+    return localStorage.getItem('selectedLanguage') || 'fr';
+}
+
+function showFallbackReviews() {
+    const reviewsContainer = document.querySelector('.reviews-container');
+    if (!reviewsContainer) return;
+    
+    const fallbackReviews = [
+        {
+            nombre: "Marie Dupont",
+            rating: 5,
+            comentario: "Service excellent! Très professionnel et efficace.",
+            fecha_creacion: "2024-11-15"
+        },
+        {
+            nombre: "Jean Martin",
+            rating: 5,
+            comentario: "Résultats remarquables. Je recommande vivement!",
+            fecha_creacion: "2024-11-10"
+        },
+        {
+            nombre: "Sophie Bernard",
+            rating: 4,
+            comentario: "Très satisfaite des soins reçus. Équipe compétente.",
+            fecha_creacion: "2024-11-08"
+        }
+    ];
+    
+    displayReviewsInCarousel(fallbackReviews);
+}
+
+// Cargar reseñas cuando la página se carga completamente
+document.addEventListener('DOMContentLoaded', function() {
+    // Cargar reseñas después de un pequeño delay para asegurar que el DOM esté listo
+    setTimeout(() => {
+        loadReviewsFromAPI();
+    }, 1000);
 });
 

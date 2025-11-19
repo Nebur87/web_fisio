@@ -68,28 +68,39 @@
         </div>
     </div>
 
+    <!-- Hero Section -->
+    <div class="reviews-hero">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8">
+                    <h1 class="hero-title">Lo Que Dicen Nuestros Clientes</h1>
+                    <p class="hero-subtitle">Experiencias reales de personas que han confiado en nosotros</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Estadísticas de reseñas -->
-    <div class="container mb-5">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="reviews-stats card shadow-lg">
-                    <div class="card-body text-center p-4">
-                        <div class="row align-items-center">
-                            <div class="col-md-4">
-                                <div class="rating-summary">
-                                    <div class="rating-number" id="ratingPromedio">4.8</div>
-                                    <div class="rating-stars mb-2" id="starsPromedio">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <p class="text-muted mb-0">Basado en <span id="totalResenas">276</span> reseñas</p>
+    <div class="reviews-stats-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="stats-container">
+                        <div class="stats-main">
+                            <div class="rating-display">
+                                <div class="rating-number" id="ratingPromedio">4.8</div>
+                                <div class="rating-stars" id="starsPromedio">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
                                 </div>
+                                <p class="rating-text">Basado en <span id="totalResenas">276</span> reseñas verificadas</p>
                             </div>
-                            <div class="col-md-8">
-                                <div class="rating-bars" id="ratingBars">
+                        </div>
+                        <div class="stats-breakdown">
+                            <div class="rating-bars" id="ratingBars">
                                     <div class="rating-bar-item">
                                         <span>5 estrellas</span>
                                         <div class="rating-bar">
@@ -134,49 +145,65 @@
         </div>
     </div>
 
-    <!-- Filtros y botón para escribir reseña -->
-    <div class="container mb-4">
-        <div class="row">
-            <div class="col-md-6">
-                <select class="form-select" id="filterRating">
-                    <option value="">Todas las calificaciones</option>
-                    <option value="5">5 estrellas</option>
-                    <option value="4">4 estrellas</option>
-                    <option value="3">3 estrellas</option>
-                    <option value="2">2 estrellas</option>
-                    <option value="1">1 estrella</option>
-                </select>
-            </div>
-            <div class="col-md-6 text-md-end">
-                <button class="btn btn-primary btn-lg" onclick="mostrarFormularioResena()">
-                    <i class="fas fa-plus me-2"></i>Escribir Reseña
-                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Indicador de carga -->
-    <div class="container text-center" id="loadingIndicator" style="display: none;">
-        <div class="spinner-border text-primary" role="status">
-            <span class="visually-hidden">Cargando...</span>
+    <!-- Filtros y acciones -->
+    <div class="filters-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="filters-container">
+                        <div class="filter-group">
+                            <label for="filterRating" class="filter-label">Filtrar por:</label>
+                            <select class="filter-select" id="filterRating">
+                                <option value="">Todas las calificaciones</option>
+                                <option value="5">⭐⭐⭐⭐⭐ 5 estrellas</option>
+                                <option value="4">⭐⭐⭐⭐ 4 estrellas</option>
+                                <option value="3">⭐⭐⭐ 3 estrellas</option>
+                                <option value="2">⭐⭐ 2 estrellas</option>
+                                <option value="1">⭐ 1 estrella</option>
+                            </select>
+                        </div>
+                        <button class="btn-write-review" onclick="mostrarFormularioResena()">
+                            <i class="fas fa-edit me-2"></i>Escribir Reseña
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <p class="mt-2">Cargando reseñas...</p>
     </div>
+
+
 
     <!-- Lista de reseñas -->
-    <div class="container mb-5">
-        <div class="row" id="resenasContainer">
-            <!-- Las reseñas se cargan aquí dinámicamente -->
+    <div class="reviews-main-section">
+        <div class="reviews-container">
+            <!-- Indicador de carga -->
+            <div class="loading-container" id="loadingIndicator" style="display: none;">
+                <div class="loading-spinner"></div>
+                <p class="loading-text">Cargando reseñas...</p>
+            </div>
+            
+            <!-- Grid de reseñas -->
+            <div class="reviews-grid" id="resenasContainer">
+                <!-- Las reseñas se cargan aquí dinámicamente -->
+            </div>
+                    
+            <!-- Paginación -->
+            <div class="pagination-container">
+                <nav aria-label="Navegación de reseñas">
+                    <ul class="custom-pagination" id="paginationContainer">
+                        <!-- Botones de paginación se generan aquí -->
+                    </ul>
+                </nav>
+            </div>
         </div>
-    </div>
-
-    <!-- Paginación -->
-    <div class="container mb-5">
-        <nav aria-label="Paginación de reseñas">
-            <ul class="pagination justify-content-center" id="paginacion">
-                <!-- Paginación se genera dinámicamente -->
-            </ul>
-        </nav>
     </div>
 
     <!-- Modal para escribir reseña -->
