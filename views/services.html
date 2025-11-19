@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eclosion Des Sens</title>
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <link rel="stylesheet" href="../css/styles2.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link rel="manifest" href="manifest.json">
+
+    <!-- Metadatos en francés -->
+    <meta name="description" content="Clinique de physiothérapie professionnelle. Réservez en ligne, multilingue, services personnalisés." />
+    <meta name="author" content="Fisio Clinic" />
+    <meta name="keywords" content="physiothérapie, clinique, santé, rééducation, massage, réservation, multilingue, Neuchâtel" />
+    <meta property="og:title" content="Clinique de Physiothérapie" />
+    <meta property="og:description" content="Réservez votre séance de physiothérapie en ligne. Services professionnels et multilingues." />
+    <meta property="og:image" content="./assets/img/logo.blanco.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+
+</head>
+
+<body>
+    <header class="container">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="logo" href="./index.html"><img src="../assets/img/logo.blanco.jpg" alt="Eclosion Des Sens"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./nous.html">Sobre Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./services.html">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./galery.html">Galería</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./reserve.html">Reservar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./contact.html">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="idiomas-bar" style="display:flex;justify-content:center;gap:1.5rem;margin:1rem 0;">
+        <a href="#" onclick="setLang('es')" title="Español"><img src="../assets/img/espana.png" alt="Español" width="32"
+                height="32" style="border-radius:4px;"></a>
+        <a href="#" onclick="setLang('en')" title="English"><img src="../assets/img/bandera.png" alt="English" width="32"
+                height="32" style="border-radius:4px;"></a>
+        <a href="#" onclick="setLang('fr')" title="Français"><img src="../assets/img/francia.png" alt="Français"
+                width="32" height="32" style="border-radius:4px;"></a>
+        <a href="#" onclick="setLang('de')" title="Deutsch"><img src="../assets/img/alemania.png" alt="Deutsch"
+                width="32" height="32" style="border-radius:4px;"></a>
+    </div>
+    <section id="servicios" class="servicios">
+        <h2 class="servicios-titulo">Nos Services</h2>
+        <div class="servicios-grid">
+            <div class="servicio">
+                <div class="icono"><img src="../assets/img/fisio-1.jpeg" alt="Les bienfaits du massage"></div>
+                <div>
+                    <h3 class="beneficios-titulo">Les bienfaits du massage :</h3>
+                    <p class="beneficios-texto">
+                        Le massage stimule les tissus de la peau, des muscles, des ligaments, des tendons et
+                        favorise la circulation sanguine et le système lymphatique. Le massage permet de renforcer
+                        le système immunitaire, d’augmenter le tonus réflexe et de favoriser l’évacuation de l’acide
+                        lactique déclenché par l’effort physique.</p>
+                    <p class="beneficios-texto2">
+                        Il éveille l’équilibre entre le physique et le psychique, il apporte une sensation de détente et
+                        de bien-être.
+                    </p>
+                </div>
+            </div>
+            <div class="servicio">
+                <div class="icono"><img src="../assets/img/fisio-2.jpeg" alt="Massage sportive"></div>
+                <div>
+                    <h3 class="deportivo-titulo">Massage sportive:</h3>
+                    <p class="deportivo-texto">Le massage sportif est conçu pour aider les athlètes à préparer leur
+                        corps
+                        pour l'effort et à récupérer après. Il se concentre sur les groupes
+                        musculaires spécifiques utilisés lors de l'activité physique.
+                        Les techniques incluent le pétrissage, l'effleurage et les étirements,
+                        visant à améliorer la flexibilité et à réduire le risque de blessures.</p>
+                    <p class="deportivo-texto2">de récupération varie entre 45 et 60 minutes selon les besoins du.de la
+                        sportif.ve. Nous
+                        combinons les techniques du massage classique avec différents effleurages appuyés avec
+                        également la possibilité de travailler sur les points Triggers. Ce massage vous soulagera
+                        des tensions dues au sport ou à de mauvais mouvements.</p>
+                </div>
+            </div>
+            <div class="servicio">
+                <div class="icono"><img src="../assets/img/fisio-3.jpg" alt="Massage classique"></div>
+                <div>
+                    <h3 class="clasico-titulo">Massage classique :</h3>
+                    <p class="clasico-texto">Le massage classique – ou suédois – soulage principalement les tensions
+                        musculaires et
+                        s’applique dans la prévention des troubles de l’appareil locomoteur. La technique utilisée
+                        est celle du pétrissage, de l’effleurage, du palper-rouler et des vibrations. Ce massage
+                        également de récupérer après l’effort. Le massage préparatoire à un effort dure 5 à 15
+                        minutes, les manipulations sont rapides afin de stimuler les tissus musculaires. Le massage
+                        de récupération varie entre 45 et 60 minutes selon les besoins du.de la sportif.ve. Nous
+                        combinons les techniques du massage classique avec différents effleurages appuyés avec
+                        également la possibilité de travailler sur les points Triggers. Ce massage vous soulagera
+                        des tensions dues au sport ou à de mauvais mouvements.</p>
+                </div>
+            </div>
+            <div class="servicio">
+                <div class="icono"><img src="../assets/img/fisio-4.jpg" alt="Massage dos – nuque"></div>
+                <div>
+                    <h3 class="espalda-titulo">Massage dos – nuque :</h3>
+                    <p class="espalda-texto">Le massage du dos et de la nuque apaise les tensions musculaires et
+                        articulaires qui peuvent
+                        apparaître dans des situations de stress, lors de mauvaises postures ou suite à une activité
+                        sportive. Lors de ce massage, nous focalisons le travail sur le dos, les épaules, la nuque
+                        et la tête. Selon vos besoins, les points Triggers et le décollement de l’omoplate peuvent
+                        être proposés.</p>
+                </div>
+            </div>
+        </div>
+        <div><button id="boton-reservar" class="boton-reservar" onclick="scrollToSection('reserva')">Reserva tu
+                cita</button></div>
+    </section>
+    <footer>
+        <div style="text-align:right; margin-bottom:1.5rem;">
+    <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="btn-volver-inicio">Volver al inicio</button>
+    </div>
+        <p class="copyright">&copy; 2024 Clínica de Fisioterapia. Todos los derechos reservados.</p>
+        <div class="footer-links">
+            <a href="../views/privacidad.html" class="privacidad">Política de Privacidad</a>
+            <a href="../views/cookies.html" class="cookies">Política de Cookies</a>
+            <a href="../views/aviso-legal.html" class="aviso-legal">Aviso Legal</a>
+        </div>
+        <div class="footer-social" style="margin-top:1rem;">
+            <a href="https://instagram.com" target="_blank" rel="noopener" style="margin:0 0.5rem;">
+                <img src="../assets/img/instagram.png" alt="Instagram" width="32" height="32"
+                    style="vertical-align:middle;" />
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" style="margin:0 0.5rem;">
+                <img src="../assets/img/facebook.png" alt="Facebook" width="32" height="32"
+                    style="vertical-align:middle;" />
+            </a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener" style="margin:0 0.5rem;">
+                <img src="../assets/img/tik-tok.png" alt="TikTok" width="32" height="32"
+                    style="vertical-align:middle;" />
+            </a>
+        </div>
+    </footer>
+    <script>
+        window.localesJsonPath = '../locales.json';
+    </script>
+    <script src="../js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

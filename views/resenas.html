@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todas las Reseñas - Eclosion Des Sens</title>
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="stylesheet" href="../css/styles2.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="container">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="logo" href="../index.html">
+                    <img src="../assets/img/logo.blanco.jpg" alt="Eclosion Des Sens">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./nous.html">Sobre Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./services.html">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./galery.html">Galería</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./reserve.html">Reservar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./contact.html">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./resenas.html">Reseñas</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Título principal -->
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="display-4 fw-bold text-primary mb-3">
+                    <i class="fas fa-star text-warning me-3"></i>
+                    Todas Nuestras Reseñas
+                </h1>
+                <p class="lead text-muted">
+                    Descubre lo que dicen nuestros clientes sobre su experiencia
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Estadísticas de reseñas -->
+    <div class="container mb-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="reviews-stats card shadow-lg">
+                    <div class="card-body text-center p-4">
+                        <div class="row align-items-center">
+                            <div class="col-md-4">
+                                <div class="rating-summary">
+                                    <div class="rating-number" id="ratingPromedio">4.8</div>
+                                    <div class="rating-stars mb-2" id="starsPromedio">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <p class="text-muted mb-0">Basado en <span id="totalResenas">276</span> reseñas</p>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="rating-bars" id="ratingBars">
+                                    <div class="rating-bar-item">
+                                        <span>5 estrellas</span>
+                                        <div class="rating-bar">
+                                            <div class="fill" style="width: 85%"></div>
+                                        </div>
+                                        <span class="rating-count">234</span>
+                                    </div>
+                                    <div class="rating-bar-item">
+                                        <span>4 estrellas</span>
+                                        <div class="rating-bar">
+                                            <div class="fill" style="width: 12%"></div>
+                                        </div>
+                                        <span class="rating-count">32</span>
+                                    </div>
+                                    <div class="rating-bar-item">
+                                        <span>3 estrellas</span>
+                                        <div class="rating-bar">
+                                            <div class="fill" style="width: 2%"></div>
+                                        </div>
+                                        <span class="rating-count">6</span>
+                                    </div>
+                                    <div class="rating-bar-item">
+                                        <span>2 estrellas</span>
+                                        <div class="rating-bar">
+                                            <div class="fill" style="width: 1%"></div>
+                                        </div>
+                                        <span class="rating-count">3</span>
+                                    </div>
+                                    <div class="rating-bar-item">
+                                        <span>1 estrella</span>
+                                        <div class="rating-bar">
+                                            <div class="fill" style="width: 0%"></div>
+                                        </div>
+                                        <span class="rating-count">1</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filtros y botón para escribir reseña -->
+    <div class="container mb-4">
+        <div class="row">
+            <div class="col-md-6">
+                <select class="form-select" id="filterRating">
+                    <option value="">Todas las calificaciones</option>
+                    <option value="5">5 estrellas</option>
+                    <option value="4">4 estrellas</option>
+                    <option value="3">3 estrellas</option>
+                    <option value="2">2 estrellas</option>
+                    <option value="1">1 estrella</option>
+                </select>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <button class="btn btn-primary btn-lg" onclick="mostrarFormularioResena()">
+                    <i class="fas fa-plus me-2"></i>Escribir Reseña
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Indicador de carga -->
+    <div class="container text-center" id="loadingIndicator" style="display: none;">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Cargando...</span>
+        </div>
+        <p class="mt-2">Cargando reseñas...</p>
+    </div>
+
+    <!-- Lista de reseñas -->
+    <div class="container mb-5">
+        <div class="row" id="resenasContainer">
+            <!-- Las reseñas se cargan aquí dinámicamente -->
+        </div>
+    </div>
+
+    <!-- Paginación -->
+    <div class="container mb-5">
+        <nav aria-label="Paginación de reseñas">
+            <ul class="pagination justify-content-center" id="paginacion">
+                <!-- Paginación se genera dinámicamente -->
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Modal para escribir reseña -->
+    <div class="modal fade" id="resenaModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <i class="fas fa-star text-warning me-2"></i>
+                        Escribir Reseña
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="resenaForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="resenaName" class="form-label">Nombre *</label>
+                                <input type="text" class="form-control" id="resenaName" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="resenaEmail" class="form-label">Email *</label>
+                                <input type="email" class="form-control" id="resenaEmail" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Calificación *</label>
+                            <div class="rating-input" id="ratingInput">
+                                <i class="fas fa-star" data-rating="1"></i>
+                                <i class="fas fa-star" data-rating="2"></i>
+                                <i class="fas fa-star" data-rating="3"></i>
+                                <i class="fas fa-star" data-rating="4"></i>
+                                <i class="fas fa-star" data-rating="5"></i>
+                            </div>
+                            <input type="hidden" id="selectedRating" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="resenaComentario" class="form-label">Comentario *</label>
+                            <textarea class="form-control" id="resenaComentario" rows="4" 
+                                placeholder="Cuéntanos sobre tu experiencia..." required></textarea>
+                        </div>
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle me-2"></i>
+                            Tu reseña será revisada antes de publicarse.
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary" id="submitResena" form="resenaForm">
+                        <i class="fas fa-paper-plane me-2"></i>
+                        Enviar Reseña
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2024 Eclosion Des Sens. Tous droits réservés.</p>
+            <a href="../views/privacidad.html" class="privacidad">Política de Privacidad</a>
+            <a href="../views/cookies.html" class="cookies">Política de Cookies</a>
+            <a href="../views/aviso-legal.html" class="aviso-legal">Aviso Legal</a>
+        </div>
+        <div class="footer-social" style="margin-top:1rem;">
+            <a href="https://instagram.com" target="_blank" rel="noopener" style="margin:0 0.5rem;">
+                <img src="../assets/img/instagram.png" alt="Instagram" width="32" height="32" />
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" style="margin:0 0.5rem;">
+                <img src="../assets/img/facebook.png" alt="Facebook" width="32" height="32" />
+            </a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener" style="margin:0 0.5rem;">
+                <img src="../assets/img/tik-tok.png" alt="TikTok" width="32" height="32" />
+            </a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/resenas.js"></script>
+</body>
+
+</html>

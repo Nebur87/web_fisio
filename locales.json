@@ -1,0 +1,399 @@
+{
+  "es": {
+    "navbar": {
+      "inicio": "Inicio",
+      "sobre_nosotros": "Sobre Nosotros",
+      "servicios": "Servicios",
+      "galeria": "Galería",
+      "reservar": "Reservar",
+      "contacto": "Contacto"
+    },
+    "hero": {
+      "titulo": "Sobre nosotros, Ariane Gardi:",
+      "parrafo1": "Diplomada en educación social y con 20 años de experiencia en el sector, he trabajado en diversas instituciones de acompañamiento de adolescentes y adultos en Suiza. Desde joven me ha interesado el bienestar que proporciona el contacto y me he perfeccionado en el ámbito del masaje, realizando una formación en la escuela Isana en masaje clásico y deportivo en 2019. El contacto es el corazón del masaje, está relacionado con la relajación, el bienestar y la reducción del dolor. Establece una conexión humana y de confianza, lo que tiene efectos terapéuticos beneficiosos.",
+      "parrafo2": "Ofrezco diferentes tipos de masajes con aceites biológicos y artesanales de calidad que te permiten relajarte y disfrutar plenamente del momento. Tras compartir consulta en un gabinete terapéutico, en 2025 decido abrir mi propio gabinete en un espacio multidisciplinar: Espace Famaïa. Te recibo con gusto los jueves y un sábado de cada dos para consultas en mi gabinete, situado en St-Blaise (frente a Manor). La confidencialidad sobre los datos de salud necesarios está estrictamente respetada."
+    },
+    "galeria": {
+      "titulo": "Galería de Fisioterapia",
+      "descripcion": "Descubre nuestras instalaciones y técnicas de fisioterapia profesional",
+      "filtro_todas": "Todas",
+      "filtro_instalaciones": "Instalaciones",
+      "filtro_tratamientos": "Tratamientos",
+      "filtro_ejercicios": "Ejercicios",
+      "filtro_equipos": "Equipos"
+    },
+    "servicios": {
+      "titulo": "Nuestros Servicios",
+      "beneficios_titulo": "Beneficios del masaje:",
+      "beneficios_texto": "El masaje estimula los tejidos de la piel, músculos, ligamentos y tendones, favoreciendo la circulación sanguínea y el sistema linfático. Permite reforzar el sistema inmunitario, aumentar el tono reflejo y favorecer la eliminación del ácido láctico generado por el esfuerzo físico. Equilibra el cuerpo y la mente, aportando relajación y bienestar.",
+      "deportivo_titulo": "Masaje deportivo:",
+      "deportivo_texto": "El masaje deportivo está diseñado para ayudar a los atletas a preparar su cuerpo para el esfuerzo y recuperarse después. Se centra en los grupos musculares específicos utilizados durante la actividad física. Las técnicas incluyen amasamiento, fricción y estiramientos, mejorando la flexibilidad y reduciendo el riesgo de lesiones. La recuperación varía entre 45 y 60 minutos según las necesidades del deportista. Combinamos técnicas de masaje clásico con fricciones profundas y la posibilidad de trabajar puntos gatillo. Este masaje alivia tensiones derivadas del deporte o de movimientos incorrectos.",
+      "clasico_titulo": "Masaje clásico:",
+      "clasico_texto": "El masaje clásico – o sueco – alivia principalmente las tensiones musculares y se aplica en la prevención de trastornos del aparato locomotor. La técnica empleada incluye amasamiento, fricción, palpar-rodar y vibraciones. También ayuda a recuperar tras el esfuerzo. El masaje preparatorio dura de 5 a 15 minutos, con manipulaciones rápidas para estimular los tejidos musculares. El masaje de recuperación varía entre 45 y 60 minutos según las necesidades del deportista. Combinamos técnicas de masaje clásico con fricciones profundas y la posibilidad de trabajar puntos gatillo. Este masaje alivia tensiones derivadas del deporte o de movimientos incorrectos.",
+      "espalda_titulo": "Masaje de espalda y cuello:",
+      "espalda_texto": "El masaje de espalda y cuello alivia las tensiones musculares y articulares que pueden aparecer por estrés, malas posturas o actividad física. En este masaje se trabaja especialmente la espalda, los hombros, el cuello y la cabeza. Según tus necesidades, se pueden tratar puntos gatillo y realizar técnicas de movilización de la escápula."
+    },
+    "reserva": {
+      "titulo": "Reserva Online",
+      "duracion": "Duración:",
+      "nombre": "Nombre:",
+      "email": "Email:",
+      "fecha": "Fecha:",
+      "hora": "Hora:",
+      "confirmar": "Confirmar"
+    },
+    "contacto": {
+      "titulo": "Contacto",
+      "direccion": "📍 Eclosion des Sens<br>c/o Espace Famaïa<br>Av. des Pâquiers 22<br>2072 St-Blaise",
+      "telefono": "📞 076 575 45 59",
+      "email": "✉️ info@eclosiondessens.com"
+    },
+    "index": {
+      "welcome_title": "Bienvenido a Eclosion Des Sens",
+      "welcome_description": "Centro especializado en fisioterapia y bienestar, ofrecemos tratamientos personalizados para mejorar tu calidad de vida. Con años de experiencia y técnicas avanzadas, te ayudamos a recuperar tu equilibrio físico y mental.",
+      "book_appointment": "Reservar Cita",
+      "our_services": "Nuestros Servicios",
+      "main_services": "Nuestros Servicios Principales",
+      "services_subtitle": "Tratamientos especializados para tu bienestar integral",
+      "therapeutic_massage": "Masaje Terapéutico",
+      "therapeutic_massage_desc": "Técnicas especializadas para aliviar tensiones musculares y mejorar la circulación.",
+      "sports_rehabilitation": "Rehabilitación Deportiva",
+      "sports_rehabilitation_desc": "Recuperación de lesiones deportivas y prevención para atletas de todos los niveles.",
+      "home_therapy": "Fisioterapia a Domicilio",
+      "home_therapy_desc": "Tratamientos personalizados en la comodidad de tu hogar para mayor conveniencia.",
+      "view_all_services": "Ver Todos los Servicios",
+      "why_choose_us": "¿Por Qué Elegirnos?",
+      "professional_team": "Equipo Profesional",
+      "professional_team_desc": "Fisioterapeutas certificados con años de experiencia y formación continua.",
+      "flexible_schedules": "Horarios Flexibles",
+      "flexible_schedules_desc": "Agenda online disponible 24/7 con horarios adaptados a tu disponibilidad.",
+      "multilingual_service": "Atención Multilingüe",
+      "multilingual_service_desc": "Servicios en español, francés, inglés y alemán para tu comodidad.",
+      "satisfied_patients": "Pacientes Satisfechos",
+      "years_experience": "Años de Experiencia",
+      "average_rating": "Valoración Promedio",
+      "online_booking": "Reservas Online",
+      "ready_to_start": "¿Listo para comenzar tu recuperación?",
+      "contact_call_to_action": "Contacta con nosotros hoy mismo y da el primer paso hacia una vida sin dolor.",
+      "book_now": "Reservar Ahora",
+      "our_location": "Nuestra Ubicación",
+      "phone_contact": "Teléfono",
+      "call_hours": "Lun - Vie: 9:00 - 18:00",
+      "email_contact": "Email",
+      "response_time": "Respuesta en 24h",
+      "reviews_title": "Lo Que Dicen Nuestros Clientes",
+      "reviews_total": "276 reseñas",
+      "view_all_reviews": "Ver todas las reseñas"
+    },
+    "footer": {
+      "copyright": "© 2024 Clínica de Fisioterapia. Todos los derechos reservados.",
+      "privacidad": "Política de Privacidad",
+      "cookies": "Política de Cookies",
+      "aviso_legal": "Aviso Legal"
+    },
+    "politicas": {
+      "privacidad": {
+        "titulo": "Política de Privacidad",
+        "intro": "En Clínica de Fisioterapia respetamos tu privacidad y protegemos tus datos personales conforme a la normativa vigente. Los datos recogidos a través de formularios, correos electrónicos o cualquier otro medio serán tratados con la máxima confidencialidad y solo para los fines indicados.",
+        "datos_recogemos": "¿Qué datos recogemos?",
+        "lista_datos": ["Datos de contacto (nombre, email, teléfono)", "Datos de reserva y consulta"],
+        "usos": "¿Para qué usamos tus datos?",
+        "lista_usos": ["Gestionar citas y consultas", "Responder a solicitudes", "Enviar información relevante"],
+        "derechos": "Derechos del usuario",
+        "derechos_texto": "Puedes ejercer tus derechos de acceso, rectificación, cancelación y oposición enviando un correo a info@clinicafisioterapiacr.com.",
+        "responsable": "Responsable del tratamiento",
+        "responsable_texto": "Clínica de Fisioterapia, Calle Industria Suiza 25, St-Blaise."
+      },
+      "cookies": {
+        "titulo": "Política de Cookies",
+        "intro": "Este sitio web utiliza cookies para mejorar la experiencia del usuario y analizar el tráfico. Las cookies son pequeños archivos que se almacenan en tu dispositivo y permiten recordar tus preferencias.",
+        "tipos": "¿Qué tipos de cookies usamos?",
+        "lista_tipos": ["Cookies técnicas: necesarias para el funcionamiento del sitio.", "Cookies de análisis: para estadísticas de uso."],
+        "gestion": "¿Cómo puedes gestionar las cookies?",
+        "gestion_texto": "Puedes configurar tu navegador para aceptar, rechazar o eliminar las cookies. Consulta la ayuda de tu navegador para más información.",
+        "consentimiento": "Consentimiento",
+        "consentimiento_texto": "Al navegar por este sitio, aceptas el uso de cookies según esta política."
+      },
+      "aviso_legal": {
+        "titulo": "Aviso Legal",
+        "datos_titular": "Datos del titular",
+        "datos_titular_texto": "Clínica de Fisioterapia<br>Calle Industria Suiza 25, St-Blaise<br>Email: info@clinicafisioterapiacr.com",
+        "propiedad": "Propiedad intelectual",
+        "propiedad_texto": "Todos los contenidos de este sitio web (textos, imágenes, logotipos, etc.) son propiedad de Clínica de Fisioterapia o de sus respectivos autores y están protegidos por la legislación vigente.",
+        "condiciones": "Condiciones de uso",
+        "condiciones_texto": "El acceso y uso de este sitio implica la aceptación de las condiciones aquí expuestas. Clínica de Fisioterapia no se responsabiliza del uso indebido de la información ni de los daños derivados del acceso o uso de este sitio."
+      }
+    },
+    "volver_atras": "Volver atrás"
+  },
+  "fr": {
+    "navbar": {
+      "inicio": "Accueil",
+      "sobre_nosotros": "À propos de nous",
+      "servicios": "Services",
+      "galeria": "Galerie",
+      "reservar": "Réserver",
+      "contacto": "Contact"
+    },
+    "hero": {
+      "titulo": "À propos de nous, Ariane Gardi :",
+      "parrafo1": "Titulaire d’un diplôme en éducation sociale et active dans ce domaine depuis 20 ans, j’ai travaillé dans diverses institutions d’accompagnement d’adolescents et d’adultes en Suisse romande. Intéressée depuis mon plus jeune âge par le bien-être que procure le toucher, je me suis perfectionnée dans le domaine du massage en suivant une formation à l’école Isana en massage classique et sportif en 2019. Le toucher est au cœur du massage, il est lié à la détente, au bien-être et à la réduction de la douleur. Il établit une connexion humaine et de confiance, ce qui a des effets thérapeutiques bénéfiques.",
+      "parrafo2": "Je propose différents massages avec diverses huiles biologiques et artisanales de qualité qui vous permettent de vous détendre et de profiter pleinement du moment. Après avoir partagé mon cabinet dans un espace thérapeutique, j’ai décidé en 2025 d’ouvrir mon propre cabinet dans un espace pluridisciplinaire : Espace Famaïa. C’est avec plaisir que je vous accueille les jeudis et un samedi sur deux pour des consultations dans mon cabinet, situé à St-Blaise (en face de Manor). La confidentialité concernant les quelques éléments de santé nécessaires à aborder est strictement respectée."
+    },
+    "galeria": {
+      "titulo": "Galerie de Physiothérapie",
+      "descripcion": "Découvrez nos installations et techniques de physiothérapie professionnelle",
+      "filtro_todas": "Toutes",
+      "filtro_instalaciones": "Installations",
+      "filtro_tratamientos": "Traitements",
+      "filtro_ejercicios": "Exercices",
+      "filtro_equipos": "Équipements"
+    },
+    "servicios": {
+      "titulo": "Nos Services",
+      "beneficios_titulo": "Les bienfaits du massage :",
+      "beneficios_texto": "Le massage stimule les tissus de la peau, des muscles, des ligaments et des tendons, favorise la circulation sanguine et le système lymphatique. Il permet de renforcer le système immunitaire, d’augmenter le tonus réflexe et de favoriser l’élimination de l’acide lactique généré par l’effort physique. Il équilibre le corps et l’esprit, apportant détente et bien-être.",
+      "deportivo_titulo": "Massage sportif :",
+      "deportivo_texto": "Le massage sportif est conçu pour aider les athlètes à préparer leur corps à l’effort et à récupérer après. Il se concentre sur les groupes musculaires spécifiques utilisés lors de l’activité physique. Les techniques incluent le pétrissage, l’effleurage et les étirements, visant à améliorer la flexibilité et à réduire le risque de blessures. La récupération varie entre 45 et 60 minutes selon les besoins du sportif. Nous combinons les techniques du massage classique avec des effleurages profonds et la possibilité de travailler sur les points triggers. Ce massage soulage les tensions dues au sport ou à de mauvais mouvements.",
+      "clasico_titulo": "Massage classique :",
+      "clasico_texto": "Le massage classique – ou suédois – soulage principalement les tensions musculaires et s’applique dans la prévention des troubles de l’appareil locomoteur. La technique utilisée inclut le pétrissage, l’effleurage, le palper-rouler et les vibrations. Il aide aussi à récupérer après l’effort. Le massage préparatoire dure de 5 à 15 minutes, avec des manipulations rapides pour stimuler les tissus musculaires. Le massage de récupération varie entre 45 et 60 minutes selon les besoins du sportif. Nous combinons les techniques du massage classique avec des effleurages profonds et la possibilité de travailler sur les points triggers. Ce massage soulage les tensions dues au sport ou à de mauvais mouvements.",
+      "espalda_titulo": "Massage dos – nuque :",
+      "espalda_texto": "Le massage du dos et de la nuque apaise les tensions musculaires et articulaires qui peuvent apparaître en cas de stress, de mauvaises postures ou d’activité physique. Ce massage cible particulièrement le dos, les épaules, la nuque et la tête. Selon vos besoins, les points triggers et la mobilisation de l’omoplate peuvent être proposés."
+    },
+    "reserva": {
+      "titulo": "Réservation en ligne",
+      "duracion": "Durée :",
+      "nombre": "Nom :",
+      "email": "Email :",
+      "fecha": "Date :",
+      "hora": "Heure :",
+      "confirmar": "Confirmer"
+    },
+    "contacto": {
+      "titulo": "Contact",
+      "direccion": "📍 Eclosion des Sens<br>c/o Espace Famaïa<br>Av. des Pâquiers 22<br>2072 St-Blaise",
+      "telefono": "📞 076 575 45 59",
+      "email": "✉️ info@eclosiondessens.com"
+    },
+    "footer": {
+      "copyright": "© 2024 Clinique de Physiothérapie. Tous droits réservés.",
+      "privacidad": "Politique de confidentialité",
+      "cookies": "Politique de cookies",
+      "aviso_legal": "Mentions légales"
+    },
+    "politicas": {
+      "privacidad": {
+        "titulo": "Politique de confidentialité",
+        "intro": "À la Clinique de Physiothérapie, nous respectons votre vie privée et protégeons vos données personnelles conformément à la législation en vigueur. Les données collectées via des formulaires, des emails ou tout autre moyen seront traitées avec la plus grande confidentialité et uniquement pour les finalités indiquées.",
+        "datos_recogemos": "Quelles données collectons-nous ?",
+        "lista_datos": ["Données de contact (nom, email, téléphone)", "Données de réservation et de consultation"],
+        "usos": "À quoi servent vos données ?",
+        "lista_usos": ["Gérer les rendez-vous et consultations", "Répondre aux demandes", "Envoyer des informations pertinentes"],
+        "derechos": "Droits de l’utilisateur",
+        "derechos_texto": "Vous pouvez exercer vos droits d’accès, de rectification, d’annulation et d’opposition en envoyant un email à info@clinicafisioterapiacr.com.",
+        "responsable": "Responsable du traitement",
+        "responsable_texto": "Clinique de Physiothérapie, Rue Industrie Suisse 25, St-Blaise."
+      },
+      "cookies": {
+        "titulo": "Politique de cookies",
+        "intro": "Ce site web utilise des cookies pour améliorer l’expérience utilisateur et analyser le trafic. Les cookies sont de petits fichiers stockés sur votre appareil et permettent de mémoriser vos préférences.",
+        "tipos": "Quels types de cookies utilisons-nous ?",
+        "lista_tipos": ["Cookies techniques : nécessaires au fonctionnement du site.", "Cookies d’analyse : pour les statistiques d’utilisation."],
+        "gestion": "Comment gérer les cookies ?",
+        "gestion_texto": "Vous pouvez configurer votre navigateur pour accepter, refuser ou supprimer les cookies. Consultez l’aide de votre navigateur pour plus d’informations.",
+        "consentimiento": "Consentement",
+        "consentimiento_texto": "En naviguant sur ce site, vous acceptez l’utilisation de cookies conformément à cette politique."
+      },
+      "aviso_legal": {
+        "titulo": "Mentions légales",
+        "datos_titular": "Données du titulaire",
+        "datos_titular_texto": "Clinique de Physiothérapie<br>Rue Industrie Suisse 25, St-Blaise<br>Email : info@clinicafisioterapiacr.com",
+        "propiedad": "Propriété intellectuelle",
+        "propiedad_texto": "Tous les contenus de ce site web (textes, images, logos, etc.) sont la propriété de la Clinique de Physiothérapie ou de leurs auteurs respectifs et sont protégés par la législation en vigueur.",
+        "condiciones": "Conditions d’utilisation",
+        "condiciones_texto": "L’accès et l’utilisation de ce site impliquent l’acceptation des conditions exposées ici. La Clinique de Physiothérapie n’est pas responsable de l’utilisation abusive des informations ni des dommages résultant de l’accès ou de l’utilisation de ce site."
+      }
+    },
+    "volver_atras": "Retour"
+  },
+  "de": {
+    "navbar": {
+      "inicio": "Startseite",
+      "sobre_nosotros": "Über uns",
+      "servicios": "Leistungen",
+      "galeria": "Galerie",
+      "reservar": "Buchen",
+      "contacto": "Kontakt"
+    },
+    "hero": {
+      "titulo": "Über uns, Ariane Gardi:",
+      "parrafo1": "Mit einem Abschluss in Sozialpädagogik und 20 Jahren Erfahrung habe ich in verschiedenen Institutionen zur Unterstützung von Jugendlichen und Erwachsenen in der Schweiz gearbeitet. Schon früh interessierte ich mich für das Wohlbefinden, das Berührung vermittelt, und habe mich im Bereich Massage spezialisiert, mit einer Ausbildung an der Isana-Schule für klassische und Sportmassage im Jahr 2019. Die Berührung steht im Mittelpunkt der Massage, sie ist mit Entspannung, Wohlbefinden und Schmerzlinderung verbunden. Sie schafft eine menschliche und vertrauensvolle Verbindung, die therapeutisch vorteilhaft ist.",
+      "parrafo2": "Ich biete verschiedene Massagen mit hochwertigen biologischen und handgefertigten Ölen an, die Ihnen helfen, sich zu entspannen und den Moment voll zu genießen. Nachdem ich meine Praxis in einer therapeutischen Gemeinschaft geteilt habe, habe ich mich 2025 entschieden, meine eigene Praxis in einem multidisziplinären Raum zu eröffnen: Espace Famaïa. Ich empfange Sie gerne donnerstags und jeden zweiten Samstag zu Beratungen in meiner Praxis in St-Blaise (gegenüber Manor). Die Vertraulichkeit bezüglich der notwendigen Gesundheitsdaten wird streng gewahrt."
+    },
+    "galeria": {
+      "titulo": "Physiotherapie-Galerie",
+      "descripcion": "Entdecken Sie unsere Einrichtungen und professionellen Physiotherapie-Techniken",
+      "filtro_todas": "Alle",
+      "filtro_instalaciones": "Einrichtungen",
+      "filtro_tratamientos": "Behandlungen",
+      "filtro_ejercicios": "Übungen",
+      "filtro_equipos": "Ausrüstung"
+    },
+    "servicios": {
+      "titulo": "Unsere Leistungen",
+      "beneficios_titulo": "Vorteile der Massage:",
+      "beneficios_texto": "Massage stimuliert die Gewebe der Haut, Muskeln, Bänder und Sehnen und fördert die Durchblutung und das Lymphsystem. Sie stärkt das Immunsystem, erhöht den Reflex-Tonus und fördert die Ausscheidung von Milchsäure, die durch körperliche Anstrengung entsteht. Sie bringt Körper und Geist ins Gleichgewicht und sorgt für Entspannung und Wohlbefinden.",
+      "deportivo_titulo": "Sportmassage:",
+      "deportivo_texto": "Die Sportmassage hilft Sportlern, ihren Körper auf Anstrengung vorzubereiten und sich danach zu erholen. Sie konzentriert sich auf die spezifischen Muskelgruppen, die bei körperlicher Aktivität beansprucht werden. Die Techniken umfassen Kneten, Reiben und Dehnen, verbessern die Flexibilität und verringern das Verletzungsrisiko. Die Erholungszeit variiert zwischen 45 und 60 Minuten, je nach Bedarf des Sportlers. Wir kombinieren klassische Massagetechniken mit tiefen Reibungen und der Möglichkeit, Triggerpunkte zu behandeln. Diese Massage lindert Verspannungen durch Sport oder falsche Bewegungen.",
+      "clasico_titulo": "Klassische Massage:",
+      "clasico_texto": "Die klassische (schwedische) Massage lindert hauptsächlich Muskelverspannungen und wird zur Vorbeugung von Beschwerden des Bewegungsapparates eingesetzt. Die Technik umfasst Kneten, Reiben, Rollen und Vibrationen. Sie hilft auch bei der Erholung nach Anstrengung. Die vorbereitende Massage dauert 5 bis 15 Minuten, mit schnellen Bewegungen zur Stimulation des Muskelgewebes. Die Erholungsmassage dauert je nach Bedarf des Sportlers zwischen 45 und 60 Minuten. Wir kombinieren klassische Massagetechniken mit tiefen Reibungen und der Möglichkeit, Triggerpunkte zu behandeln. Diese Massage lindert Verspannungen durch Sport oder falsche Bewegungen.",
+      "espalda_titulo": "Rücken- und Nackenmassage:",
+      "espalda_texto": "Die Rücken- und Nackenmassage lindert Muskel- und Gelenkverspannungen, die durch Stress, schlechte Haltung oder körperliche Aktivität entstehen können. Bei dieser Massage werden besonders Rücken, Schultern, Nacken und Kopf behandelt. Je nach Bedarf können Triggerpunkte und Mobilisationstechniken des Schulterblatts angewendet werden."
+    },
+    "reserva": {
+      "titulo": "Online-Buchung",
+      "duracion": "Dauer:",
+      "nombre": "Name:",
+      "email": "E-Mail:",
+      "fecha": "Datum:",
+      "hora": "Uhrzeit:",
+      "confirmar": "Bestätigen"
+    },
+    "contacto": {
+      "titulo": "Kontakt",
+      "direccion": "📍 Eclosion des Sens<br>c/o Espace Famaïa<br>Av. des Pâquiers 22<br>2072 St-Blaise",
+      "telefono": "📞 076 575 45 59",
+      "email": "✉️ info@eclosiondessens.com"
+    },
+    "footer": {
+      "copyright": "© 2024 Physiotherapie Klinik. Alle Rechte vorbehalten.",
+      "privacidad": "Datenschutzrichtlinie",
+      "cookies": "Cookie-Richtlinie",
+      "aviso_legal": "Impressum"
+    },
+    "politicas": {
+      "privacidad": {
+        "titulo": "Datenschutzrichtlinie",
+        "intro": "In der Physiotherapie Klinik respektieren wir Ihre Privatsphäre und schützen Ihre persönlichen Daten gemäß den geltenden Vorschriften. Die über Formulare, E-Mails oder andere Mittel erhobenen Daten werden mit größter Vertraulichkeit und nur für die angegebenen Zwecke behandelt.",
+        "datos_recogemos": "Welche Daten erheben wir?",
+        "lista_datos": ["Kontaktdaten (Name, E-Mail, Telefon)", "Buchungs- und Beratungsdaten"],
+        "usos": "Wofür verwenden wir Ihre Daten?",
+        "lista_usos": ["Verwaltung von Terminen und Beratungen", "Antwort auf Anfragen", "Versand relevanter Informationen"],
+        "derechos": "Nutzerrechte",
+        "derechos_texto": "Sie können Ihre Rechte auf Zugang, Berichtigung, Löschung und Widerspruch ausüben, indem Sie eine E-Mail an info@clinicafisioterapiacr.com senden.",
+        "responsable": "Verantwortlicher für die Datenverarbeitung",
+        "responsable_texto": "Physiotherapie Klinik, Industrie Schweiz Straße 25, St-Blaise."
+      },
+      "cookies": {
+        "titulo": "Cookie-Richtlinie",
+        "intro": "Diese Website verwendet Cookies, um die Benutzererfahrung zu verbessern und den Datenverkehr zu analysieren. Cookies sind kleine Dateien, die auf Ihrem Gerät gespeichert werden und Ihre Präferenzen speichern.",
+        "tipos": "Welche Arten von Cookies verwenden wir?",
+        "lista_tipos": ["Technische Cookies: notwendig für den Betrieb der Website.", "Analyse-Cookies: für Nutzungsstatistiken."],
+        "gestion": "Wie können Sie Cookies verwalten?",
+        "gestion_texto": "Sie können Ihren Browser so konfigurieren, dass er Cookies akzeptiert, ablehnt oder löscht. Weitere Informationen finden Sie in der Hilfe Ihres Browsers.",
+        "consentimiento": "Einwilligung",
+        "consentimiento_texto": "Durch das Surfen auf dieser Website akzeptieren Sie die Verwendung von Cookies gemäß dieser Richtlinie."
+      },
+      "aviso_legal": {
+        "titulo": "Impressum",
+        "datos_titular": "Angaben zum Inhaber",
+        "datos_titular_texto": "Physiotherapie Klinik<br>Industrie Schweiz Straße 25, St-Blaise<br>E-Mail: info@clinicafisioterapiacr.com",
+        "propiedad": "Urheberrecht",
+        "propiedad_texto": "Alle Inhalte dieser Website (Texte, Bilder, Logos usw.) sind Eigentum der Physiotherapie Klinik oder ihrer jeweiligen Autoren und sind durch geltendes Recht geschützt.",
+        "condiciones": "Nutzungsbedingungen",
+        "condiciones_texto": "Der Zugriff auf und die Nutzung dieser Website setzt die Akzeptanz der hier aufgeführten Bedingungen voraus. Die Physiotherapie Klinik übernimmt keine Verantwortung für Missbrauch von Informationen oder für Schäden, die durch den Zugriff auf oder die Nutzung dieser Website entstehen."
+      }
+    },
+    "volver_atras": "Zurück"
+  },
+  "en": {
+    "navbar": {
+      "inicio": "Home",
+      "sobre_nosotros": "About Us",
+      "servicios": "Services",
+      "galeria": "Gallery",
+      "reservar": "Book",
+      "contacto": "Contact"
+    },
+    "hero": {
+      "titulo": "About Us, Ariane Gardi:",
+      "parrafo1": "With a degree in social education and 20 years of experience, I have worked in various institutions supporting teenagers and adults in Switzerland. Since I was young, I have been interested in the well-being provided by touch and have specialized in massage, completing training at Isana School in classic and sports massage in 2019. Touch is at the heart of massage, related to relaxation, well-being, and pain reduction. It establishes a human and trusting connection, which has beneficial therapeutic effects.",
+      "parrafo2": "I offer different types of massages with high-quality organic and artisanal oils that allow you to relax and fully enjoy the moment. After sharing a practice in a therapeutic office, in 2025 I decided to open my own practice in a multidisciplinary space: Espace Famaïa. I am pleased to welcome you on Thursdays and every other Saturday for consultations in my office, located in St-Blaise (in front of Manor). Confidentiality regarding necessary health information is strictly respected."
+    },
+    "galeria": {
+      "titulo": "Physiotherapy Gallery",
+      "descripcion": "Discover our facilities and professional physiotherapy techniques",
+      "filtro_todas": "All",
+      "filtro_instalaciones": "Facilities",
+      "filtro_tratamientos": "Treatments",
+      "filtro_ejercicios": "Exercises",
+      "filtro_equipos": "Equipment"
+    },
+    "servicios": {
+      "titulo": "Our Services",
+      "beneficios_titulo": "Benefits of Massage:",
+      "beneficios_texto": "Massage stimulates the tissues of the skin, muscles, ligaments, and tendons, promoting blood circulation and the lymphatic system. It helps strengthen the immune system, increase reflex tone, and promote the elimination of lactic acid generated by physical effort. It balances body and mind, providing relaxation and well-being.",
+      "deportivo_titulo": "Sports Massage:",
+      "deportivo_texto": "Sports massage is designed to help athletes prepare their bodies for effort and recover afterward. It focuses on specific muscle groups used during physical activity. Techniques include kneading, friction, and stretching, improving flexibility and reducing the risk of injury. Recovery varies between 45 and 60 minutes depending on the athlete's needs. We combine classic massage techniques with deep friction and the possibility of working on trigger points. This massage relieves tension caused by sports or incorrect movements.",
+      "clasico_titulo": "Classic Massage:",
+      "clasico_texto": "Classic (Swedish) massage mainly relieves muscle tension and is used to prevent musculoskeletal disorders. The technique includes kneading, friction, rolling, and vibrations. It also helps with recovery after effort. Preparatory massage lasts 5 to 15 minutes, with quick manipulations to stimulate muscle tissues. Recovery massage varies between 45 and 60 minutes depending on the athlete's needs. We combine classic massage techniques with deep friction and the possibility of working on trigger points. This massage relieves tension caused by sports or incorrect movements.",
+      "espalda_titulo": "Back and Neck Massage:",
+      "espalda_texto": "Back and neck massage relieves muscle and joint tension that can appear due to stress, poor posture, or physical activity. This massage focuses especially on the back, shoulders, neck, and head. Depending on your needs, trigger points and scapula mobilization techniques can be applied."
+    },
+    "reserva": {
+      "titulo": "Online Booking",
+      "duracion": "Duration:",
+      "nombre": "Name:",
+      "email": "Email:",
+      "fecha": "Date:",
+      "hora": "Time:",
+      "confirmar": "Confirm"
+    },
+    "contacto": {
+      "titulo": "Contact",
+      "direccion": "📍 Eclosion des Sens<br>c/o Espace Famaïa<br>Av. des Pâquiers 22<br>2072 St-Blaise",
+      "telefono": "📞 076 575 45 59",
+      "email": "✉️ info@eclosiondessens.com"
+    },
+    "footer": {
+      "copyright": "© 2024 Physiotherapy Clinic. All rights reserved.",
+      "privacidad": "Privacy Policy",
+      "cookies": "Cookie Policy",
+      "aviso_legal": "Legal Notice"
+    },
+    "politicas": {
+      "privacidad": {
+        "titulo": "Privacy Policy",
+        "intro": "At Physiotherapy Clinic, we respect your privacy and protect your personal data in accordance with current regulations. Data collected through forms, emails, or any other means will be treated with the utmost confidentiality and only for the indicated purposes.",
+        "datos_recogemos": "What data do we collect?",
+        "lista_datos": ["Contact data (name, email, phone)", "Booking and consultation data"],
+        "usos": "What do we use your data for?",
+        "lista_usos": ["Manage appointments and consultations", "Respond to requests", "Send relevant information"],
+        "derechos": "User rights",
+        "derechos_texto": "You can exercise your rights of access, rectification, cancellation, and opposition by sending an email to info@clinicafisioterapiacr.com.",
+        "responsable": "Data controller",
+        "responsable_texto": "Physiotherapy Clinic, Calle Industria Suiza 25, St-Blaise."
+      },
+      "cookies": {
+        "titulo": "Cookie Policy",
+        "intro": "This website uses cookies to improve user experience and analyze traffic. Cookies are small files stored on your device and allow your preferences to be remembered.",
+        "tipos": "What types of cookies do we use?",
+        "lista_tipos": ["Technical cookies: necessary for the operation of the site.", "Analytics cookies: for usage statistics."],
+        "gestion": "How can you manage cookies?",
+        "gestion_texto": "You can configure your browser to accept, reject, or delete cookies. Check your browser's help for more information.",
+        "consentimiento": "Consent",
+        "consentimiento_texto": "By browsing this site, you accept the use of cookies according to this policy."
+      },
+      "aviso_legal": {
+        "titulo": "Legal Notice",
+        "datos_titular": "Owner data",
+        "datos_titular_texto": "Physiotherapy Clinic<br>Calle Industria Suiza 25, St-Blaise<br>Email: info@clinicafisioterapiacr.com",
+        "propiedad": "Intellectual property",
+        "propiedad_texto": "All content on this website (texts, images, logos, etc.) is the property of Physiotherapy Clinic or their respective authors and is protected by current legislation.",
+        "condiciones": "Terms of use",
+        "condiciones_texto": "Accessing and using this site implies acceptance of the conditions stated here. Physiotherapy Clinic is not responsible for misuse of information or for damages resulting from access to or use of this site."
+      }
+    },
+    "volver_atras": "Go back"
+  }
+}

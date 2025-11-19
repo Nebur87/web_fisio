@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eclosion Des Sens</title>
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <link rel="stylesheet" href="../css/styles2.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link rel="manifest" href="manifest.json">
+
+    <!-- Metadatos en francés -->
+    <meta name="description" content="Clinique de physiothérapie professionnelle. Réservez en ligne, multilingue, services personnalisés." />
+    <meta name="author" content="Fisio Clinic" />
+    <meta name="keywords" content="physiothérapie, clinique, santé, rééducation, massage, réservation, multilingue, Neuchâtel" />
+    <meta property="og:title" content="Clinique de Physiothérapie" />
+    <meta property="og:description" content="Réservez votre séance de physiothérapie en ligne. Services professionnels et multilingues." />
+    <meta property="og:image" content="./assets/img/logo.blanco.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+
+</head>
+
+<body>
+   <header class="container">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="logo" href="./index.html"><img src="../assets/img/logo.blanco.jpg" alt="Eclosion Des Sens"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./nous.html">Sobre Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./services.html">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./galery.html">Galería</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./reserve.html">Reservar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./contact.html">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="idiomas-bar" style="display:flex;justify-content:center;gap:1.5rem;margin:1rem 0;">
+        <a href="#" onclick="setLang('es')" title="Español"><img src="../assets/img/espana.png" alt="Español" width="32"
+                height="32" style="border-radius:4px;"></a>
+        <a href="#" onclick="setLang('en')" title="English"><img src="../assets/img/bandera.png" alt="English" width="32"
+                height="32" style="border-radius:4px;"></a>
+        <a href="#" onclick="setLang('fr')" title="Français"><img src="../assets/img/francia.png" alt="Français"
+                width="32" height="32" style="border-radius:4px;"></a>
+        <a href="#" onclick="setLang('de')" title="Deutsch"><img src="../assets/img/alemania.png" alt="Deutsch"
+                width="32" height="32" style="border-radius:4px;"></a>
+    </div>
+    <div><button id="boton-reservar" class="boton-reservar" onclick="scrollToSection('reserva')">Reserva tu
+                cita</button></div>
+
+    <main class="container mt-5">
+        <section class="gallery-section">
+            <h1 class="gallery-title text-center mb-5">Galería de Fisioterapia</h1>
+            <p class="gallery-description text-center mb-5">
+                Descubre nuestras instalaciones y técnicas de fisioterapia profesional
+            </p>
+            
+            <div class="gallery-grid" id="galleryGrid">
+                <div class="gallery-item" data-category="instalaciones">
+                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop&crop=center" 
+                         alt="Sala de fisioterapia moderna" 
+                         data-title="Sala de Fisioterapia Moderna"
+                         data-description="Nuestras instalaciones cuentan con equipamiento de última generación">
+                </div>
+                
+                <div class="gallery-item" data-category="tratamientos">
+                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop&crop=face" 
+                         alt="Sesión de masaje terapéutico" 
+                         data-title="Masaje Terapéutico"
+                         data-description="Técnicas especializadas de masaje para aliviar el dolor">
+                </div>
+                
+                <div class="gallery-item" data-category="ejercicios">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop&crop=center" 
+                         alt="Ejercicios de rehabilitación" 
+                         data-title="Ejercicios de Rehabilitación"
+                         data-description="Programas personalizados de ejercicios terapéuticos">
+                </div>
+                
+                <div class="gallery-item" data-category="equipos">
+                    <img src="https://images.unsplash.com/photo-1584362917165-526a968579e8?w=400&h=300&fit=crop&crop=center" 
+                         alt="Equipos de fisioterapia" 
+                         data-title="Equipos Profesionales"
+                         data-description="Tecnología avanzada para tratamientos efectivos">
+                </div>
+                
+                <div class="gallery-item" data-category="tratamientos">
+                    <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400&h=300&fit=crop&crop=center" 
+                         alt="Terapia manual" 
+                         data-title="Terapia Manual"
+                         data-description="Técnicas manuales especializadas">
+                </div>
+                
+                <div class="gallery-item" data-category="instalaciones">
+                    <img src="https://images.unsplash.com/photo-1571772996211-2f02c9727629?w=400&h=300&fit=crop&crop=center" 
+                         alt="Gimnasio de rehabilitación" 
+                         data-title="Gimnasio de Rehabilitación"
+                         data-description="Espacio amplio para ejercicios de recuperación">
+                </div>
+                
+                <div class="gallery-item" data-category="ejercicios">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=300&fit=crop&crop=center" 
+                         alt="Pilates terapéutico" 
+                         data-title="Pilates Terapéutico"
+                         data-description="Ejercicios de pilates adaptados para rehabilitación">
+                </div>
+                
+                <div class="gallery-item" data-category="tratamientos">
+                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=300&fit=crop&crop=center" 
+                         alt="Electroterapia" 
+                         data-title="Electroterapia"
+                         data-description="Tratamientos con corrientes eléctricas terapéuticas">
+                </div>
+                
+                <div class="gallery-item" data-category="instalaciones">
+                    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&h=300&fit=crop&crop=center" 
+                         alt="Consulta privada" 
+                         data-title="Consulta Privada"
+                         data-description="Espacios privados para evaluaciones personalizadas">
+                </div>
+                
+                <div class="gallery-item" data-category="ejercicios">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop&crop=center" 
+                         alt="Yoga terapéutico" 
+                         data-title="Yoga Terapéutico"
+                         data-description="Posturas de yoga adaptadas para la recuperación">
+                </div>
+                
+                <div class="gallery-item" data-category="equipos">
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=300&fit=crop&crop=center" 
+                         alt="Ultrasonido terapéutico" 
+                         data-title="Ultrasonido Terapéutico"
+                         data-description="Tecnología de ultrasonido para tratamientos profundos">
+                </div>
+                
+                <div class="gallery-item" data-category="tratamientos">
+                    <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400&h=300&fit=crop&crop=center" 
+                         alt="Stretching asistido" 
+                         data-title="Stretching Asistido"
+                         data-description="Técnicas de estiramiento con asistencia profesional">
+                </div>
+            </div>
+            
+            <!-- Filtros de categoría -->
+            <div class="gallery-filters text-center mt-5 mb-4">
+                <button class="filter-btn active" data-filter="all">Todas</button>
+                <button class="filter-btn" data-filter="instalaciones">Instalaciones</button>
+                <button class="filter-btn" data-filter="tratamientos">Tratamientos</button>
+                <button class="filter-btn" data-filter="ejercicios">Ejercicios</button>
+                <button class="filter-btn" data-filter="equipos">Equipos</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal para ver imagen en grande -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel">Imagen de la Galería</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="modalImage" src="" alt="" class="img-fluid mb-3">
+                    <h6 id="modalTitle"></h6>
+                    <p id="modalDescription"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div style="text-align:right; margin-bottom:1.5rem;">
+    <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="btn-volver-inicio">Volver al inicio</button>
+    </div>
+        <p class="copyright">&copy; 2024 Clínica de Fisioterapia. Todos los derechos reservados.</p>
+        <div class="footer-links">
+            <a href="../views/privacidad.html" class="privacidad">Política de Privacidad</a>
+            <a href="../views/cookies.html" class="cookies">Política de Cookies</a>
+            <a href="../views/aviso-legal.html" class="aviso-legal">Aviso Legal</a>
+        </div>
+        <div class="footer-social" style="margin-top:1rem;">
+            <a href="https://instagram.com" target="_blank" rel="noopener" style="margin:0 0.5rem;">
+                <img src="../assets/img/instagram.png" alt="Instagram" width="32" height="32"
+                    style="vertical-align:middle;" />
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" style="margin:0 0.5rem;">
+                <img src="../assets/img/facebook.png" alt="Facebook" width="32" height="32"
+                    style="vertical-align:middle;" />
+            </a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener" style="margin:0 0.5rem;">
+                <img src="../assets/img/tik-tok.png" alt="TikTok" width="32" height="32"
+                    style="vertical-align:middle;" />
+            </a>
+        </div>
+    </footer>
+    <script>
+        window.localesJsonPath = '../locales.json';
+    </script>
+    <script src="../js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

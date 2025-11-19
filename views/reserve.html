@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eclosion Des Sens</title>
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <link rel="stylesheet" href="../css/styles2.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link rel="manifest" href="manifest.json">
+
+    <!-- Metadatos en francés -->
+    <meta name="description" content="Clinique de physiothérapie professionnelle. Réservez en ligne, multilingue, services personnalisés." />
+    <meta name="author" content="Fisio Clinic" />
+    <meta name="keywords" content="physiothérapie, clinique, santé, rééducation, massage, réservation, multilingue, Neuchâtel" />
+    <meta property="og:title" content="Clinique de Physiothérapie" />
+    <meta property="og:description" content="Réservez votre séance de physiothérapie en ligne. Services professionnels et multilingues." />
+    <meta property="og:image" content="./assets/img/logo.blanco.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+
+</head>
+
+<body>
+   <header class="container">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="logo" href="./index.html"><img src="../assets/img/logo.blanco.jpg" alt="Eclosion Des Sens"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./nous.html">Sobre Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./services.html">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./galery.html">Galería</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./reserve.html">Reservar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./contact.html">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="idiomas-bar" style="display:flex;justify-content:center;gap:1.5rem;margin:1rem 0;">
+        <a href="#" onclick="setLang('es')" title="Español"><img src="../assets/img/espana.png" alt="Español" width="32"
+                height="32" style="border-radius:4px;"></a>
+        <a href="#" onclick="setLang('en')" title="English"><img src="../assets/img/bandera.png" alt="English" width="32"
+                height="32" style="border-radius:4px;"></a>
+        <a href="#" onclick="setLang('fr')" title="Français"><img src="../assets/img/francia.png" alt="Français"
+                width="32" height="32" style="border-radius:4px;"></a>
+        <a href="#" onclick="setLang('de')" title="Deutsch"><img src="../assets/img/alemania.png" alt="Deutsch"
+                width="32" height="32" style="border-radius:4px;"></a>
+    </div>
+    <main class="container mt-5">
+        <section id="reserva" class="reserva-section">
+            <div class="reserva-header text-center mb-5">
+                <h1 class="reserva-titulo">Reserva tu Cita</h1>
+                <p class="reserva-subtitulo">Agenda tu sesión de fisioterapia de forma rápida y sencilla</p>
+            </div>
+
+            <!-- Sección de Login/Autenticación -->
+            <div id="loginSection" class="row justify-content-center" style="display: none;">
+                <div class="col-lg-6 col-xl-5">
+                    <div class="login-card">
+                        <div class="login-header text-center mb-4">
+                            <div class="login-icon mb-3">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <h3>Acceso Requerido</h3>
+                            <p class="text-muted">Para hacer una reserva, necesitas identificarte</p>
+                        </div>
+
+                        <div id="loginError" class="alert alert-danger" style="display: none;">
+                            <i class="fas fa-exclamation-triangle me-2"></i>
+                            <span id="loginErrorMessage"></span>
+                        </div>
+
+                        <form id="clientLoginForm">
+                            <div class="mb-3">
+                                <label for="clientEmail" class="form-label">
+                                    <i class="fas fa-envelope me-2"></i>Email
+                                </label>
+                                <input type="email" class="form-control" id="clientEmail" 
+                                       placeholder="tu@email.com" required autocomplete="email">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="clientPhone" class="form-label">
+                                    <i class="fas fa-phone me-2"></i>Teléfono
+                                </label>
+                                <input type="tel" class="form-control" id="clientPhone" 
+                                       placeholder="+41 XX XXX XX XX" required autocomplete="tel">
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary w-100" id="clientLoginBtn">
+                                <i class="fas fa-sign-in-alt me-2"></i>
+                                Continuar con la Reserva
+                            </button>
+                        </form>
+                        
+                        <div class="text-center mt-3">
+                            <small class="text-muted">
+                                <i class="fas fa-shield-alt me-1"></i>
+                                Tus datos están seguros y solo se usan para la reserva
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección del Formulario de Reserva -->
+            <div id="reservaFormSection" class="row justify-content-center" style="display: none;">
+                <div class="col-lg-8 col-xl-6">
+                    <div class="reserva-card">
+                        <form id="reservaForm" novalidate>
+                            <div class="form-step active" id="step1">
+                                <h3 class="step-title">
+                                    <i class="fas fa-clock me-2"></i>
+                                    Selecciona la duración
+                                </h3>
+                                
+                                <div class="duracion-options">
+                                    <input type="radio" id="dur20" name="duracion" value="20" required>
+                                    <label for="dur20" class="duracion-card">
+                                        <div class="duracion-icon">20</div>
+                                        <div class="duracion-text">
+                                            <strong>20 minutos</strong>
+                                            <small>Consulta rápida</small>
+                                        </div>
+                                        <div class="duracion-precio">35€</div>
+                                    </label>
+
+                                    <input type="radio" id="dur30" name="duracion" value="30" required>
+                                    <label for="dur30" class="duracion-card">
+                                        <div class="duracion-icon">30</div>
+                                        <div class="duracion-text">
+                                            <strong>30 minutos</strong>
+                                            <small>Sesión estándar</small>
+                                        </div>
+                                        <div class="duracion-precio">50€</div>
+                                    </label>
+
+                                    <input type="radio" id="dur60" name="duracion" value="60" required>
+                                    <label for="dur60" class="duracion-card">
+                                        <div class="duracion-icon">60</div>
+                                        <div class="duracion-text">
+                                            <strong>60 minutos</strong>
+                                            <small>Sesión completa</small>
+                                        </div>
+                                        <div class="duracion-precio">80€</div>
+                                    </label>
+                                </div>
+                                
+                                <div class="step-navigation">
+                                    <button type="button" class="btn-next" onclick="nextStep(2)">
+                                        Continuar
+                                        <i class="fas fa-arrow-right ms-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="form-step" id="step2">
+                                <h3 class="step-title">
+                                    <i class="fas fa-calendar me-2"></i>
+                                    Selecciona fecha y hora
+                                </h3>
+                                
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="fecha" class="form-label">Fecha de la cita</label>
+                                        <input type="date" class="form-control" id="fecha" name="fecha" required>
+                                        <div class="invalid-feedback">Por favor, selecciona una fecha.</div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="hora" class="form-label">Hora disponible</label>
+                                        <select class="form-select" id="hora" name="hora" required>
+                                            <option value="">Selecciona una hora</option>
+                                        </select>
+                                        <div class="invalid-feedback">Por favor, selecciona una hora.</div>
+                                        <div id="horariosLoading" class="text-center mt-2" style="display: none;">
+                                            <small class="text-muted">
+                                                <i class="fas fa-spinner fa-spin me-1"></i>
+                                                Cargando horarios disponibles...
+                                            </small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="step-navigation">
+                                    <button type="button" class="btn-back" onclick="prevStep(1)">
+                                        <i class="fas fa-arrow-left me-2"></i>
+                                        Anterior
+                                    </button>
+                                    <button type="button" class="btn-next" onclick="nextStep(3)">
+                                        Continuar
+                                        <i class="fas fa-arrow-right ms-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="form-step" id="step3">
+                                <h3 class="step-title">
+                                    <i class="fas fa-user me-2"></i>
+                                    Tus datos de contacto
+                                </h3>
+                                
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="nombre" class="form-label">Nombre completo</label>
+                                        <input type="text" class="form-control" id="nombre" name="nombre" 
+                                               placeholder="Tu nombre completo" required autocomplete="name">
+                                        <div class="invalid-feedback">Por favor, introduce tu nombre.</div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="email" name="email" 
+                                               placeholder="tu@email.com" required autocomplete="email">
+                                        <div class="invalid-feedback">Por favor, introduce un email válido.</div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="telefono" class="form-label">Teléfono (opcional)</label>
+                                    <input type="tel" class="form-control" id="telefono" name="telefono" 
+                                           placeholder="+41 XX XXX XX XX" autocomplete="tel">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="notas" class="form-label">Notas adicionales (opcional)</label>
+                                    <textarea class="form-control" id="notas" name="notas" rows="3" 
+                                              placeholder="¿Alguna información adicional que debamos conocer?"></textarea>
+                                </div>
+
+                                <div class="step-navigation">
+                                    <button type="button" class="btn-back" onclick="prevStep(2)">
+                                        <i class="fas fa-arrow-left me-2"></i>
+                                        Anterior
+                                    </button>
+                                    <button type="button" class="btn-next" onclick="nextStep(4)">
+                                        Revisar
+                                        <i class="fas fa-check ms-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="form-step" id="step4">
+                                <h3 class="step-title">
+                                    <i class="fas fa-check-circle me-2"></i>
+                                    Confirma tu reserva
+                                </h3>
+
+                                <div class="reserva-resumen">
+                                    <div class="resumen-item">
+                                        <strong>Duración:</strong>
+                                        <span id="resumenDuracion">-</span>
+                                    </div>
+                                    <div class="resumen-item">
+                                        <strong>Fecha:</strong>
+                                        <span id="resumenFecha">-</span>
+                                    </div>
+                                    <div class="resumen-item">
+                                        <strong>Hora:</strong>
+                                        <span id="resumenHora">-</span>
+                                    </div>
+                                    <div class="resumen-item">
+                                        <strong>Cliente:</strong>
+                                        <span id="resumenNombre">-</span>
+                                    </div>
+                                    <div class="resumen-item">
+                                        <strong>Email:</strong>
+                                        <span id="resumenEmail">-</span>
+                                    </div>
+                                    <div class="resumen-precio">
+                                        <strong>Precio:</strong>
+                                        <span id="resumenPrecio">-</span>
+                                    </div>
+                                </div>
+
+                                <div class="form-check mb-4">
+                                    <input class="form-check-input" type="checkbox" id="aceptarTerminos" required>
+                                    <label class="form-check-label" for="aceptarTerminos">
+                                        Acepto los <a href="./aviso-legal.html" target="_blank">términos y condiciones</a> 
+                                        y la <a href="./privacidad.html" target="_blank">política de privacidad</a>
+                                    </label>
+                                    <div class="invalid-feedback">Debes aceptar los términos y condiciones.</div>
+                                </div>
+
+                                <div class="step-navigation">
+                                    <button type="button" class="btn-back" onclick="prevStep(3)">
+                                        <i class="fas fa-arrow-left me-2"></i>
+                                        Anterior
+                                    </button>
+                                    <button type="submit" class="btn-confirm" id="btnConfirmar">
+                                        <i class="fas fa-calendar-check me-2"></i>
+                                        Confirmar Reserva
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Indicador de progreso -->
+                            <div class="progress-indicator">
+                                <div class="progress-step active" data-step="1">
+                                    <div class="step-number">1</div>
+                                    <div class="step-label">Duración</div>
+                                </div>
+                                <div class="progress-step" data-step="2">
+                                    <div class="step-number">2</div>
+                                    <div class="step-label">Fecha/Hora</div>
+                                </div>
+                                <div class="progress-step" data-step="3">
+                                    <div class="step-number">3</div>
+                                    <div class="step-label">Datos</div>
+                                </div>
+                                <div class="progress-step" data-step="4">
+                                    <div class="step-number">4</div>
+                                    <div class="step-label">Confirmar</div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Información del Usuario Logueado -->
+            <div id="userInfo" class="text-center mt-4" style="display: none;">
+                <div class="user-info-card">
+                    <p class="mb-2">
+                        <i class="fas fa-user me-2 text-success"></i>
+                        Conectado como: <strong id="loggedUserName"></strong>
+                    </p>
+                    <button type="button" class="btn btn-outline-secondary btn-sm" onclick="logoutClient()">
+                        <i class="fas fa-sign-out-alt me-1"></i>
+                        Cambiar Usuario
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal de éxito -->
+        <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body text-center p-5">
+                        <div class="success-icon mb-4">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3 class="mb-3">¡Reserva Confirmada!</h3>
+                        <p class="mb-4">Tu cita ha sido registrada correctamente. Recibirás un email de confirmación en breve.</p>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Entendido</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div style="text-align:right; margin-bottom:1.5rem;">
+    <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="btn-volver-inicio">Volver al inicio</button>
+    </div>
+        <p class="copyright">&copy; 2024 Clínica de Fisioterapia. Todos los derechos reservados.</p>
+        <div class="footer-links">
+            <a href="../views/privacidad.html" class="privacidad">Política de Privacidad</a>
+            <a href="../views/cookies.html" class="cookies">Política de Cookies</a>
+            <a href="../views/aviso-legal.html" class="aviso-legal">Aviso Legal</a>
+        </div>
+        <div class="footer-social" style="margin-top:1rem;">
+            <a href="https://instagram.com" target="_blank" rel="noopener" style="margin:0 0.5rem;">
+                <img src="../assets/img/instagram.png" alt="Instagram" width="32" height="32"
+                    style="vertical-align:middle;" />
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" style="margin:0 0.5rem;">
+                <img src="../assets/img/facebook.png" alt="Facebook" width="32" height="32"
+                    style="vertical-align:middle;" />
+            </a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener" style="margin:0 0.5rem;">
+                <img src="../assets/img/tik-tok.png" alt="TikTok" width="32" height="32"
+                    style="vertical-align:middle;" />
+            </a>
+        </div>
+    </footer>
+    <script>
+        window.localesJsonPath = '../locales.json';
+    </script>
+    <script src="../js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

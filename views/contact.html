@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eclosion Des Sens</title>
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <link rel="stylesheet" href="../css/styles2.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link rel="manifest" href="manifest.json">
+
+    <!-- Metadatos en francés -->
+    <meta name="description" content="Clinique de physiothérapie professionnelle. Réservez en ligne, multilingue, services personnalisés." />
+    <meta name="author" content="Fisio Clinic" />
+    <meta name="keywords" content="physiothérapie, clinique, santé, rééducation, massage, réservation, multilingue, Neuchâtel" />
+    <meta property="og:title" content="Clinique de Physiothérapie" />
+    <meta property="og:description" content="Réservez votre séance de physiothérapie en ligne. Services professionnels et multilingues." />
+    <meta property="og:image" content="./assets/img/logo.blanco.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+
+</head>
+
+<body>
+    <header class="container">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="logo" href="./index.html"><img src="../assets/img/logo.blanco.jpg" alt="Eclosion Des Sens"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./nous.html">Sobre Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./services.html">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./galery.html">Galería</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./reserve.html">Reservar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./contact.html">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="idiomas-bar" style="display:flex;justify-content:center;gap:1.5rem;margin:1rem 0;">
+        <a href="#" onclick="setLang('es')" title="Español"><img src="../assets/img/espana.png" alt="Español" width="32"
+                height="32" style="border-radius:4px;"></a>
+        <a href="#" onclick="setLang('en')" title="English"><img src="../assets/img/bandera.png" alt="English" width="32"
+                height="32" style="border-radius:4px;"></a>
+        <a href="#" onclick="setLang('fr')" title="Français"><img src="../assets/img/francia.png" alt="Français"
+                width="32" height="32" style="border-radius:4px;"></a>
+        <a href="#" onclick="setLang('de')" title="Deutsch"><img src="../assets/img/alemania.png" alt="Deutsch"
+                width="32" height="32" style="border-radius:4px;"></a>
+    </div>
+     <section id="contacto" class="contacto">
+        <h2 class="contacto-titulo">Contacto</h2>
+        <p class="contacto-direccion">📍 Eclosion des Sens<br>c/o Espace Famaïa<br>Av. des Pâquiers 22<br>2072 St-Blaise
+        </p>
+        <p class="contacto-telefono">📞 076 575 45 59</p>
+        <p class="contacto-email">✉️ info@eclosiondessens.com</p>
+    </section>
+    <div class="mapa-contacto">
+        <a href="https://www.google.com/maps/search/?api=1&query=Av.+des+P%C3%A2quiers+22,+2072+St-Blaise"
+            target="_blank" rel="noopener" class="iframe-mapa-link">
+            <iframe src="https://www.google.com/maps?q=Av.+des+P%C3%A2quiers+22,+2072+St-Blaise&output=embed"
+                class="iframe-mapa" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </a>
+        <div><button id="boton-reservar" class="boton-reservar" onclick="scrollToSection('reserva')">Reserva tu
+                cita</button></div>
+    </div>
+   
+    <footer>
+        <div style="text-align:right; margin-bottom:1.5rem;">
+    <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="btn-volver-inicio">Volver al inicio</button>
+    </div>
+        <p class="copyright">&copy; 2024 Clínica de Fisioterapia. Todos los derechos reservados.</p>
+        <div class="footer-links">
+            <a href="../views/privacidad.html" class="privacidad">Política de Privacidad</a>
+            <a href="../views/cookies.html" class="cookies">Política de Cookies</a>
+            <a href="../views/aviso-legal.html" class="aviso-legal">Aviso Legal</a>
+        </div>
+        <div class="footer-social" style="margin-top:1rem;">
+            <a href="https://instagram.com" target="_blank" rel="noopener" style="margin:0 0.5rem;">
+                <img src="../assets/img/instagram.png" alt="Instagram" width="32" height="32"
+                    style="vertical-align:middle;" />
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" style="margin:0 0.5rem;">
+                <img src="../assets/img/facebook.png" alt="Facebook" width="32" height="32"
+                    style="vertical-align:middle;" />
+            </a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener" style="margin:0 0.5rem;">
+                <img src="../assets/img/tik-tok.png" alt="TikTok" width="32" height="32"
+                    style="vertical-align:middle;" />
+            </a>
+        </div>
+    </footer>
+    <script>
+        window.localesJsonPath = '../locales.json';
+    </script>
+    <script src="../js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
