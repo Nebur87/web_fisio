@@ -37,7 +37,7 @@ async function cargarReservas() {
     mostrarCargando(true);
     
     try {
-        const response = await fetch('/todas-reservas', {
+        const response = await fetch('http://localhost:3001/todas-reservas', {
             headers: {
                 'Authorization': `Bearer ${authToken}`
             }
@@ -162,12 +162,37 @@ function obtenerEstado(fecha) {
 
 // Formatear fecha
 function formatearFecha(fecha) {
-    return new Date(fecha + 'T00:00:00').toLocaleDateString('es-ES', {
-        weekday: 'short',
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric'
-    });
+    // Si es YYYY-MM-DD, parsea directo
+    if (/^\d{4}-\d{2}-\d{2}$/.test(fecha)) {
+        return new Date(fecha + 'T00:00:00').toLocaleDateString('es-ES', {
+            weekday: 'short',
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+        });
+    }
+    // Si es DD/MM/YYYY, conviértelo a YYYY-MM-DD
+    if (/^\d{2}\/\d{2}\/\d{4}$/.test(fecha)) {
+        const [d, m, y] = fecha.split('/');
+        return new Date(`${y}-${m}-${d}T00:00:00`).toLocaleDateString('es-ES', {
+            weekday: 'short',
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+        });
+    }
+    // Si no, intenta parsear normal
+    const dateObj = new Date(fecha);
+    if (!isNaN(dateObj)) {
+        return dateObj.toLocaleDateString('es-ES', {
+            weekday: 'short',
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+        });
+    }
+    // Si todo falla, muestra la fecha original
+    return fecha;
 }
 
 // Filtrar reservas
@@ -297,7 +322,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!reservaAAnular) return;
 
             try {
-                const response = await fetch('/anular-reserva', {
+                const response = await fetch('http://localhost:3001/anular-reserva', {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json',

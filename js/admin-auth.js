@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     // Verificar si el token es válido
     try {
-        const response = await fetch('/admin/verify', {
+        const response = await fetch('http://localhost:3001/admin/verify', {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${authToken}`,
@@ -64,20 +64,21 @@ async function handleAdminLogin(e) {
     e.preventDefault();
     
     const submitBtn = document.getElementById('adminLoginBtn');
-    const spinner = document.getElementById('loginSpinner');
-    const btnText = document.getElementById('loginBtnText');
-    
+    // Spinner está dentro del botón, con clase admin-loading-spinner
+    const spinner = submitBtn ? submitBtn.querySelector('.admin-loading-spinner') : null;
+    const btnText = document.getElementById('adminLoginText');
+
     // Mostrar estado de carga
-    submitBtn.disabled = true;
-    spinner.style.display = 'inline-block';
-    btnText.textContent = 'Iniciando sesión...';
-    
+    if (submitBtn) submitBtn.disabled = true;
+    if (spinner) spinner.style.display = 'inline-block';
+    if (btnText) btnText.textContent = 'Iniciando sesión...';
+
     const username = document.getElementById('adminUsername').value.trim();
     const password = document.getElementById('adminPassword').value;
-    const rememberMe = document.getElementById('rememberAdmin').checked;
+    const rememberMe = document.getElementById('adminRememberMe').checked;
     
     try {
-        const response = await fetch('/admin/login', {
+        const response = await fetch('http://localhost:3001/admin/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -92,10 +93,10 @@ async function handleAdminLogin(e) {
             const storage = rememberMe ? localStorage : sessionStorage;
             storage.setItem('adminToken', data.token);
             authToken = data.token;
-            
+
             // Mostrar panel de admin
             showAdminPanel();
-            
+
             // Inicializar página específica si existe la función
             if (typeof initializePage === 'function') {
                 initializePage();
@@ -108,9 +109,9 @@ async function handleAdminLogin(e) {
         alert('Error: ' + error.message);
     } finally {
         // Restaurar estado del botón
-        submitBtn.disabled = false;
-        spinner.style.display = 'none';
-        btnText.textContent = 'Iniciar Sesión';
+        if (submitBtn) submitBtn.disabled = false;
+        if (spinner) spinner.style.display = 'none';
+        if (btnText) btnText.textContent = 'Iniciar Sesión';
     }
 }
 

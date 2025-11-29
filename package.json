@@ -1,0 +1,20 @@
+{
+  "name": "web_fisio2",
+  "version": "1.0.0",
+  "description": "Sitio web para la Clínica de Fisioterapia.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nebur87/web_fisio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nebur87/web_fisio/issues"
+  },
+  "homepage": "https://github.com/Nebur87/web_fisio#readme"
+}
