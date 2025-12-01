@@ -7,7 +7,9 @@ const pool = mysql.createPool({
   database: 'reservas_fisio',
   waitForConnections: true,
   connectionLimit: 10,
-  queueLimit: 0
+  queueLimit: 0,
+  charset: 'utf8mb4',
+  timezone: '+00:00'
 });
 
 module.exports = pool.promise();
