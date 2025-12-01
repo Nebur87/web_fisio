@@ -9,49 +9,7 @@ const db = require('./db');
 const app = express();
 const PORT = 3001;
 
-<<<<<<< HEAD
-// Configuración de admin (usuario y contraseña fijos)
-const ADMIN_USER = 'admin';
-const ADMIN_PASS = 'fisio2025';
-const ADMIN_TOKEN = 'admin-token-2025'; // Token simple para demo
-
-app.use(cors());
-app.use(express.json());
-app.use(express.static(__dirname + '/../'));
-
-// Endpoint de login de admin
-app.post('/admin/login', (req, res) => {
-  const { username, password } = req.body;
-  if (username === ADMIN_USER && password === ADMIN_PASS) {
-    return res.json({ success: true, token: ADMIN_TOKEN });
-  } else {
-    return res.status(401).json({ success: false, message: 'Credenciales incorrectas' });
-  }
-});
-
-// Endpoint para verificar token de admin
-app.post('/admin/verify', (req, res) => {
-  const auth = req.headers['authorization'] || '';
-  const token = auth.replace('Bearer ', '');
-  if (token === ADMIN_TOKEN) {
-    return res.json({ ok: true });
-  } else {
-    return res.status(401).json({ ok: false });
-  }
-});
-
-// Ruta para obtener todas las reservas (solo uso interno)
-app.get('/todas-reservas', async (req, res) => {
-  // Protección: requiere token admin
-  const auth = req.headers['authorization'] || '';
-  const token = auth.replace('Bearer ', '');
-  if (token !== ADMIN_TOKEN) {
-    return res.status(401).json({ ok: false, message: 'No autorizado' });
-  }
-  try {
-    const [rows] = await db.query('SELECT id, nombre, email, fecha, DATE_FORMAT(hora, "%H:%i") as hora, duracion FROM reservas');
-    res.json({ ok: true, reservas: rows });
-=======
+// Configuración de CORS más específica
 // Configuración de CORS más específica
 const corsOptions = {
   origin: ['http://localhost:3001', 'http://127.0.0.1:3001', 'http://127.0.0.1:5501', 'http://localhost:5501', 'file://'],
@@ -108,9 +66,7 @@ function authenticateToken(req, res, next) {
     next();
   });
 }
-  // Configuración de CORS más específica
-  }
-});
+
 
 // Verificar token
 app.post('/admin/verify', authenticateToken, (req, res) => {
@@ -181,7 +137,6 @@ app.get('/todas-reservas', authenticateToken, async (req, res) => {
       page: parseInt(page),
       limit: limit === 'all' ? rows.length : parseInt(limit)
     });
->>>>>>> 402eca40737f6d45e09400bf2f2b66f093b54007
   } catch (error) {
     console.log(error);
     res.status(500).json({ ok: false, message: 'Error al obtener reservas', error });
@@ -280,6 +235,7 @@ app.post('/send', async (req, res) => {
   const hoy = new Date();
   hoy.setHours(0, 0, 0, 0);
   if (fechaReserva < hoy) {
+    return res.status(400).json({ ok: false, message: 'No se pueden hacer reservas en fechas pasadas' });
   }
   
   try {
