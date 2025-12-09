@@ -604,7 +604,7 @@ main, section, header, footer {
     border-radius: 20px;
     padding: 2.5rem;
     box-shadow: 0 10px 40px rgba(42, 111, 151, 0.1);
-    border: 2px solid #f8f9fa;
+    border: 2px solid #faf6f3;
 }
 
 .login-icon {
@@ -635,7 +635,7 @@ main, section, header, footer {
 
 .reserva-section {
     padding: 3rem 0;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    background: linear-gradient(135deg, #faf6f3 0%, #f5ede5 100%);
     min-height: 80vh;
 }
 
@@ -705,7 +705,7 @@ main, section, header, footer {
     display: flex;
     align-items: center;
     padding: 1.5rem;
-    border: 2px solid #e9ecef;
+    border: 2px solid #faf6f3;
     border-radius: 15px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -845,7 +845,7 @@ main, section, header, footer {
 }
 
 .form-control, .form-select {
-    border: 2px solid #e9ecef;
+    border: 2px solid #faf6f3;
     border-radius: 10px;
     padding: 0.8rem 1rem;
     transition: all 0.3s ease;
@@ -866,7 +866,7 @@ main, section, header, footer {
 
 /* Resumen de reserva */
 .reserva-resumen {
-    background: #f8f9fa;
+    background: #faf6f3;
     border-radius: 15px;
     padding: 2rem;
     margin-bottom: 2rem;
@@ -877,7 +877,7 @@ main, section, header, footer {
     justify-content: space-between;
     align-items: center;
     padding: 0.75rem 0;
-    border-bottom: 1px solid #e9ecef;
+    border-bottom: 1px solid #faf6f3;
 }
 
 .resumen-item:last-child {
@@ -910,7 +910,7 @@ main, section, header, footer {
     left: 25%;
     right: 25%;
     height: 2px;
-    background: #e9ecef;
+    background: #faf6f3;
     z-index: 1;
 }
 
@@ -1246,7 +1246,7 @@ main, section, header, footer {
 
 /* Sección Hero */
 .hero-section {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    background: linear-gradient(135deg, #faf6f3 0%, #f5ede5 100%);
 }
 
 .hero-title {
@@ -1310,7 +1310,7 @@ main, section, header, footer {
 
 /* Sección de Servicios Preview */
 .services-preview {
-    background-color: #f8f9fa;
+    background-color: #faf6f3;
 }
 
 .section-title {
@@ -1485,7 +1485,7 @@ main, section, header, footer {
 
 /* Sección de Información de Contacto */
 .contact-info {
-    background-color: #f8f9fa;
+    background-color: #faf6f3;
 }
 
 .contact-card {
@@ -1607,7 +1607,7 @@ main, section, header, footer {
 
 .reviews-section {
     padding: 4rem 0;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    background: linear-gradient(135deg, #faf6f3 0%, #f5ede5 100%);
 }
 
 .reviews-summary {
@@ -1675,7 +1675,7 @@ main, section, header, footer {
 .bar {
     flex: 1;
     height: 8px;
-    background: #e9ecef;
+    background: #faf6f3;
     border-radius: 4px;
     overflow: hidden;
 }
@@ -1692,7 +1692,7 @@ main, section, header, footer {
 
 /* Hero Section */
 .reviews-hero {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    background: linear-gradient(135deg, #faf6f3 0%, #f5ede5 100%);
     padding: 80px 0 60px;
     position: relative;
     overflow: hidden;
@@ -1732,7 +1732,7 @@ main, section, header, footer {
 }
 
 .stats-container {
-    background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+    background: linear-gradient(145deg, #ffffff 0%, #faf6f3 100%);
     border-radius: 30px;
     padding: 50px;
     box-shadow: 0 20px 60px rgba(42, 111, 151, 0.1);
@@ -1841,9 +1841,9 @@ main, section, header, footer {
 /* Filters Section */
 .filters-section {
     padding: 40px 0;
-    background: #f8f9fa;
-    border-top: 1px solid #e9ecef;
-    border-bottom: 1px solid #e9ecef;
+    background: #faf6f3;
+    border-top: 1px solid #f5ede5;
+    border-bottom: 1px solid #f5ede5;
 }
 
 .filters-container {
@@ -1871,7 +1871,7 @@ main, section, header, footer {
 
 .filter-select {
     padding: 12px 20px;
-    border: 2px solid #e9ecef;
+    border: 2px solid #faf6f3;
     border-radius: 12px;
     background: white;
     font-size: 0.95rem;
@@ -1936,7 +1936,7 @@ main, section, header, footer {
 .loading-spinner {
     width: 50px;
     height: 50px;
-    border: 4px solid #e9ecef;
+    border: 4px solid #faf6f3;
     border-top: 4px solid #b05933;
     border-radius: 50%;
     animation: spin 1s linear infinite;
@@ -1968,7 +1968,7 @@ main, section, header, footer {
     margin-bottom: 25px;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    border: 1px solid #e9ecef;
+    border: 1px solid #faf6f3;
     transition: all 0.3s ease;
     width: 100%;
     box-sizing: border-box;
@@ -2332,7 +2332,7 @@ main, section, header, footer {
     padding: 8px 12px;
     border-radius: 12px;
     background: white;
-    border: 2px solid #e9ecef;
+    border: 2px solid #faf6f3;
     color: #666;
     text-decoration: none;
     font-weight: 600;
@@ -2372,7 +2372,7 @@ main, section, header, footer {
 .custom-pagination .disabled:hover {
     background: white;
     color: #666;
-    border-color: #e9ecef;
+    border-color: #faf6f3;
     transform: none;
     box-shadow: none;
 }

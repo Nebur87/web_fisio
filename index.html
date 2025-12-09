@@ -63,8 +63,6 @@
     <div class="idiomas-bar" style="display:flex;justify-content:center;gap:1.5rem;margin:1rem 0;">
         <a href="#" onclick="setLang('es')" title="Español"><img src="./assets/img/espana.png" alt="Español" width="32"
                 height="32" style="border-radius:4px;"></a>
-        <a href="#" onclick="setLang('en')" title="English"><img src="./assets/img/bandera.png" alt="English" width="32"
-                height="32" style="border-radius:4px;"></a>
         <a href="#" onclick="setLang('fr')" title="Français"><img src="./assets/img/francia.png" alt="Français"
                 width="32" height="32" style="border-radius:4px;"></a>
         <a href="#" onclick="setLang('de')" title="Deutsch"><img src="./assets/img/alemania.png" alt="Deutsch"
@@ -331,201 +329,34 @@
         </div>
     </section>
 
-    <!-- Sección de Reseñas -->
-    <section class="reviews-section">
+    <!-- Sección de Estadísticas de Reseñas -->
+    <section class="reviews-stats-mini py-5" style="background: linear-gradient(135deg, #faf6f3 0%, #f5ede5 100%);">
         <div class="container">
-            <h2 class="section-title" data-translate="reviews_title">Lo Que Dicen Nuestros Clientes</h2>
-            
-            <!-- Resumen de valoraciones -->
-            <div class="reviews-summary">
-                <div class="rating-overview">
-                    <div class="rating-score">
-                        <span class="score">4.8</span>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="reviews-count" data-translate="reviews_total">276 reseñas</p>
-                    </div>
-                    <div class="rating-breakdown">
-                        <div class="rating-bar">
-                            <span>5 <i class="fas fa-star"></i></span>
-                            <div class="bar">
-                                <div class="fill" style="width: 78%"></div>
+            <div class="text-center mb-5">
+                <h2 class="section-title" data-translate="reviews_title">Lo Que Dicen Nuestros Clientes</h2>
+                <p class="section-subtitle" data-translate="reviews_subtitle">Experiencias reales de personas que han confiado en nosotros</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="reviews-card" style="background: white; border-radius: 12px; padding: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center;">
+                        <div style="margin-bottom: 20px;">
+                            <div style="font-size: 48px; font-weight: bold; color: #333; margin-bottom: 10px;" id="navbar-rating-avg">4.8</div>
+                            <div style="font-size: 20px; color: #ffc107; margin-bottom: 10px;" id="navbar-rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
                             </div>
-                            <span>215</span>
+                            <p style="font-size: 16px; color: #666; margin-bottom: 20px;">
+                                <span data-translate="based_on">Basado en</span> <span id="navbar-reviews-count" class="reviews-count">276</span> <span data-translate="verified_reviews">reseñas verificadas</span>
+                            </p>
                         </div>
-                        <div class="rating-bar">
-                            <span>4 <i class="fas fa-star"></i></span>
-                            <div class="bar">
-                                <div class="fill" style="width: 15%"></div>
-                            </div>
-                            <span>41</span>
-                        </div>
-                        <div class="rating-bar">
-                            <span>3 <i class="fas fa-star"></i></span>
-                            <div class="bar">
-                                <div class="fill" style="width: 5%"></div>
-                            </div>
-                            <span>14</span>
-                        </div>
-                        <div class="rating-bar">
-                            <span>2 <i class="fas fa-star"></i></span>
-                            <div class="bar">
-                                <div class="fill" style="width: 1%"></div>
-                            </div>
-                            <span>4</span>
-                        </div>
-                        <div class="rating-bar">
-                            <span>1 <i class="fas fa-star"></i></span>
-                            <div class="bar">
-                                <div class="fill" style="width: 1%"></div>
-                            </div>
-                            <span>2</span>
-                        </div>
+                        <a href="./views/resenas.html" class="btn btn-primary btn-lg" style="margin-top: 20px;">
+                            <i class="fas fa-star me-2"></i><span data-translate="view_all_reviews">Ver Todas las Reseñas</span>
+                        </a>
                     </div>
                 </div>
-            </div>
-
-            <!-- Carrusel de reseñas -->
-            <div class="reviews-carousel">
-                <div class="reviews-container">
-                    <div class="review-card">
-                        <div class="review-header">
-                            <div class="reviewer-info">
-                                <div class="reviewer-avatar">M</div>
-                                <div class="reviewer-details">
-                                    <h4>Marie Dubois</h4>
-                                    <span class="review-date">hace 2 semanas</span>
-                                </div>
-                            </div>
-                            <div class="review-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <p class="review-text">"Excellent service! Le traitement a été très efficace pour mon mal de dos. L'équipe est professionnelle et attentionnée. Je recommande vivement!"</p>
-                    </div>
-
-                    <div class="review-card">
-                        <div class="review-header">
-                            <div class="reviewer-info">
-                                <div class="reviewer-avatar">H</div>
-                                <div class="reviewer-details">
-                                    <h4>Hans Müller</h4>
-                                    <span class="review-date">hace 1 mes</span>
-                                </div>
-                            </div>
-                            <div class="review-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <p class="review-text">"Hervorragende Physiotherapie! Die Behandlung war sehr professionell und hat mir bei meinen Schulterproblemen geholfen. Sehr zu empfehlen!"</p>
-                    </div>
-
-                    <div class="review-card">
-                        <div class="review-header">
-                            <div class="reviewer-info">
-                                <div class="reviewer-avatar">J</div>
-                                <div class="reviewer-details">
-                                    <h4>James Thompson</h4>
-                                    <span class="review-date">hace 3 semanas</span>
-                                </div>
-                            </div>
-                            <div class="review-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                        </div>
-                        <p class="review-text">"Great experience! The physiotherapist was very knowledgeable and helped me recover from my sports injury. The facilities are modern and clean."</p>
-                    </div>
-
-                    <div class="review-card">
-                        <div class="review-header">
-                            <div class="reviewer-info">
-                                <div class="reviewer-avatar">G</div>
-                                <div class="reviewer-details">
-                                    <h4>Giulia Rossi</h4>
-                                    <span class="review-date">hace 2 meses</span>
-                                </div>
-                            </div>
-                            <div class="review-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <p class="review-text">"Servizio eccellente! Il fisioterapista è molto competente e mi ha aiutato a risolvere i miei problemi alla schiena. Lo studio è molto accogliente."</p>
-                    </div>
-
-                    <div class="review-card">
-                        <div class="review-header">
-                            <div class="reviewer-info">
-                                <div class="reviewer-avatar">C</div>
-                                <div class="reviewer-details">
-                                    <h4>Carmen López</h4>
-                                    <span class="review-date">hace 1 semana</span>
-                                </div>
-                            </div>
-                            <div class="review-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <p class="review-text">"¡Excelente atención! Me ayudaron mucho con mi rehabilitación después de la cirugía. El trato es muy profesional y cercano. Totalmente recomendado."</p>
-                    </div>
-
-                    <div class="review-card">
-                        <div class="review-header">
-                            <div class="reviewer-info">
-                                <div class="reviewer-avatar">P</div>
-                                <div class="reviewer-details">
-                                    <h4>Pierre Martin</h4>
-                                    <span class="review-date">hace 4 semanas</span>
-                                </div>
-                            </div>
-                            <div class="review-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                        </div>
-                        <p class="review-text">"Très bon service de kinésithérapie. Les séances ont été très bénéfiques pour ma récupération. Personnel compétent et installations modernes."</p>
-                    </div>
-                </div>
-                
-                <!-- Controles del carrusel -->
-                <button class="carousel-btn prev" id="reviewsPrev">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="carousel-btn next" id="reviewsNext">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-
-            <!-- Botón para ver todas las reseñas -->
-            <div class="reviews-cta">
-                <a href="./views/resenas.html" class="btn-secondary" data-translate="view_all_reviews">Ver todas las reseñas</a>
             </div>
         </div>
     </section>

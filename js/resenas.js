@@ -40,7 +40,11 @@ async function cargarResenas() {
     mostrarCargando(true);
     
     try {
-        const response = await fetch('/resenas');
+        const response = await fetch('http://localhost:3001/resenas', {
+            headers: {
+                'Accept': 'application/json; charset=utf-8'
+            }
+        });
         const data = await response.json();
         
         if (data.ok) {
@@ -300,10 +304,10 @@ async function enviarResena(event) {
     };
     
     try {
-        const response = await fetch('/resenas', {
+        const response = await fetch('http://localhost:3001/resenas', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json; charset=utf-8'
             },
             body: JSON.stringify(formData)
         });

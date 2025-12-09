@@ -24,7 +24,7 @@ app.use(cors(corsOptions));
 app.use(express.json({ charset: 'utf-8' }));
 app.use(express.urlencoded({ extended: true, charset: 'utf-8' }));
 app.use(bodyParser.json({ charset: 'utf-8' }));
-app.use(express.static('C:/Users/Ruben/Desktop/web_fisio2'));
+app.use(express.static('C:/Users/Ruben/Desktop/proyectos.propios/web_fisio'));
 
 // Middleware global para configurar UTF-8 en todas las respuestas
 app.use((req, res, next) => {

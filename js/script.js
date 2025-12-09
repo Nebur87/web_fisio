@@ -92,6 +92,8 @@ function cambiarSlide(dir) {
 
 document.addEventListener("DOMContentLoaded", () => {
   iniciarCarrusel();
+  // Cargar estadísticas de reseñas
+  updateReviewsStats();
     // iniciarCarrusel();
     // Eliminadas referencias a carrusel-prev y carrusel-next porque no existen en el HTML actual
 // Fin del DOMContentLoaded
@@ -250,6 +252,9 @@ async function setLang(lang) {
   
   // Actualizar apariencia de botones de idioma
   updateLanguageButtons(lang);
+  
+  // Actualizar estadísticas de reseñas cuando cambia idioma
+  updateReviewsStats();
 }
 
 function updateLanguageButtons(selectedLang) {
@@ -276,7 +281,7 @@ function updateLanguageButtons(selectedLang) {
 window.setLang = setLang;
   // Detectar idioma guardado en localStorage (si existe)
   let storedLang = localStorage.getItem('lang');
-  if (storedLang && ['es','fr','de','en'].includes(storedLang)) {
+  if (storedLang && ['es','fr','de'].includes(storedLang)) {
     currentLang = storedLang;
   }
   setLang(currentLang);
@@ -1203,32 +1208,7 @@ document.addEventListener('DOMContentLoaded', function() {
     ratingBars.forEach(bar => observer.observe(bar));
 });
 
-// ===========================
-// CARGA DE RESEÑAS DESDE API
-// ===========================
 
-async function loadReviewsFromAPI() {
-    try {
-        const response = await fetch('http://localhost:3001/resenas?limit=10', {
-            headers: {
-                'Accept': 'application/json; charset=utf-8'
-            }
-        });
-        if (!response.ok) throw new Error('Error al cargar reseñas');
-        
-        const data = await response.json();
-        if (data.ok && data.resenas) {
-            displayReviewsInCarousel(data.resenas);
-        } else {
-            throw new Error('Formato de respuesta incorrecto');
-        }
-        updateReviewsStats();
-    } catch (error) {
-        console.error('Error cargando reseñas:', error);
-        // Mostrar reseñas de ejemplo si falla la API
-        showFallbackReviews();
-    }
-}
 
 function displayReviewsInCarousel(reviews) {
     const reviewsContainer = document.querySelector('.reviews-grid') || document.querySelector('#resenasContainer');
@@ -1341,7 +1321,36 @@ async function updateReviewsStats() {
         
         if (!stats) throw new Error('No se pudieron obtener las estadísticas');
         
-        // Actualizar número total de reseñas
+        // Actualizar número total de reseñas en navbar
+        const navbarReviewsCount = document.querySelector('#navbar-reviews-count');
+        if (navbarReviewsCount) {
+            navbarReviewsCount.textContent = stats.total;
+        }
+        
+        // Actualizar promedio de estrellas en navbar
+        const navbarRatingAvg = document.querySelector('#navbar-rating-avg');
+        if (navbarRatingAvg) {
+            navbarRatingAvg.textContent = stats.average.toFixed(1);
+        }
+        
+        // Actualizar estrellas visuales en navbar
+        const navbarRatingStars = document.querySelector('#navbar-rating-stars');
+        if (navbarRatingStars) {
+            const fullStars = Math.floor(stats.average);
+            let starsHtml = '';
+            for (let i = 0; i < 5; i++) {
+                if (i < fullStars) {
+                    starsHtml += '<i class="fas fa-star"></i>';
+                } else if (i === fullStars && stats.average % 1 >= 0.5) {
+                    starsHtml += '<i class="fas fa-star-half-alt"></i>';
+                } else {
+                    starsHtml += '<i class="fas fa-star" style="color: #ddd;"></i>';
+                }
+            }
+            navbarRatingStars.innerHTML = starsHtml;
+        }
+        
+        // Actualizar número total de reseñas (si existe en página de reseñas)
         const reviewsCountElement = document.querySelector('.reviews-count');
         if (reviewsCountElement) {
             const currentLang = getCurrentLanguage();
@@ -1351,14 +1360,10 @@ async function updateReviewsStats() {
                 reviewsCountElement.textContent = `${stats.total} avis`;
             } else if (currentLang === 'de') {
                 reviewsCountElement.textContent = `${stats.total} Bewertungen`;
-            } else if (currentLang === 'en') {
-                reviewsCountElement.textContent = `${stats.total} reviews`;
-            } else if (currentLang === 'it') {
-                reviewsCountElement.textContent = `${stats.total} recensioni`;
             }
         }
         
-        // Actualizar promedio de estrellas
+        // Actualizar promedio de estrellas (si existe en página de reseñas)
         const ratingElement = document.querySelector('.average-rating');
         if (ratingElement) {
             ratingElement.textContent = stats.average.toFixed(1);
@@ -1401,11 +1406,5 @@ function showFallbackReviews() {
     displayReviewsInCarousel(fallbackReviews);
 }
 
-// Cargar reseñas cuando la página se carga completamente
-document.addEventListener('DOMContentLoaded', function() {
-    // Cargar reseñas después de un pequeño delay para asegurar que el DOM esté listo
-    setTimeout(() => {
-        loadReviewsFromAPI();
-    }, 1000);
-});
+
 
